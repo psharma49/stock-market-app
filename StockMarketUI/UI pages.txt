@@ -1,0 +1,29 @@
+The UI that needs to be developed are 
+
+
+	
+ImportExcel
+	
+ManageCompanies
+	
+ManageIPO
+	
+ManageStockExchanges
+	
+CreateCompany
+	
+ComparisonCharts
+	
+UserLogin – Login for both user and Admin
+	
+UserSignup
+
+
+
+$ npm install react-fusioncharts --save
+
+https://www.fusioncharts.com/dev/getting-started/react/your-first-chart-using-react
+
+https://drive.google.com/file/d/1cU5ZobA6biUF0NDBbZbMCLrmOcWSRhnJ/view?usp=sharing
+
+https://drive.google.com/file/d/1cU5ZobA6biUF0NDBbZbMCLrmOcWSRhnJ/view?usp=sharing

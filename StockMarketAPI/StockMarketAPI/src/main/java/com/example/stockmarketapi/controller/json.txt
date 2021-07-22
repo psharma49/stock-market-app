@@ -1,0 +1,289 @@
+Sample JSON to insert stock prices /*{    "exchangeName": "bse",    "companyCode": "TCS",
+   
+        "datee ": "2014-01-01T23:28:56.782Z",
+        "timee" :"10:20:00"  } expected json format*/
+        
+        
+        
+        
+You will have to use company code to search the company stock exchange map ,
+and then get the company and update the stock price
+        
+
+You will have ot create a dervied qurey or named query on stockexchangemap, 
+that will be like get bycompanydcode
+then company.getbyid
+sample derived query on company,now this is a query to getcompanybyname 
+
+just an example public interface CompanyRepository  
+extends JpaRepository<Company,Long> {​​​​​​Company  findByName(String Name);}
+​​​​​​​
+
+
+
+
+
+prop.put("mail.smtp.host", "smtp.gmail.com");
+prop.put("mail.smtp.port", "465");
+prop.put("mail.smtp.auth", "true");
+prop.put("mail.smtp.starttls.enable", "true");
+prop.put("mail.smtp.starttls.required", "true");
+prop.put("mail.smtp.ssl.protocols", "TLSv1.2");
+prop.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+
+
+
+
+[17:02] Ram R (Naren) (Guest)
+    
+
+
+
+ 
+@NamedQuery(name = "Company.findByname", query = "SELECT c FROM Company c WHERE c.name = :name")@Entity@Table(name = "Company")
+
+ 
+public class Company {​​​​​​​​
+
+ 
+       @Id
+
+ 
+       @GeneratedValue(strategy = GenerationType.AUTO)
+
+ 
+       private Long id;
+
+ 
+       @Column(nullable = false)
+
+ 
+       private String companyName;
+
+ 
+       @Column(nullable = false)
+
+ 
+       private Double turnover;
+
+ 
+       @Column(nullable = false)
+
+ 
+       private String ceo;
+
+ 
+       @Column(nullable = false)
+
+ 
+       @Type(type = "text")
+
+ 
+       private String boardOfDirectors;
+
+ 
+       @Column(nullable = false)
+
+ 
+       @Type(type = "text")
+
+ 
+       private String companyBrief;
+
+ 
+       @OneToOne(fetch = FetchType.LAZY, mappedBy = "company", cascade = CascadeType.REMOVE)
+
+ 
+       @JsonIgnore
+
+ 
+       private IPODetail ipo;
+
+ 
+@OneToMany(targetEntity = Companystockexchangemap.class)
+
+ 
+private List<Companystockexchangemap> compstockmap;
+
+ 
+       @ManyToOne(fetch = FetchType.LAZY)
+
+ 
+       @JsonIgnore
+
+ 
+       private Sector sector;
+
+ 
+       Private String sectorname;//this will be used to pass sectorname params   //  To be passed to the controller from UI or endpoint as part of //requestbody ,based on which a derived query on sector will fetch the sector //and update the relatiohship
+ field
+
+ 
+       protected Company() {​​​​​​​​
+
+ 
+       }​​​​​​​​
+
+ 
+       public Company(String companyName, double turnover, String ceo, String boardOfDirectors, String companyBrief) {​​​​​​​​
+
+ 
+              super();
+
+ 
+              this.companyName = companyName;
+
+ 
+              this.turnover = turnover;
+
+ 
+              this.ceo = ceo;
+
+ 
+              this.boardOfDirectors = boardOfDirectors;
+
+ 
+              this.companyBrief = companyBrief;
+
+ 
+       }​​​​​​​​
+
+
+
+//Build the rest of the getter setters and constructors
+
+
+
+@Id
+    @GeneratedValue
+    private long id;
+    private String exchangename;
+    private String companycode;
+//    private LocalDateTime localdatetime;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Company company;
+    private Date datee;
+    private LocalTime timee;//change this to localtime to time to avoid errors
+    private float shareprice;
+    
+    
+    
+    
+    
+    
+@RestController
+@CrossOrigin
+public class StockPriceController {
+@Autowired
+StockPriceRepository stkpricerepo;
+/*{    "exchangeName": "bse",
+    "companyCode": "TCS",
+        "datee ": "2014-01-01T23:28:56.782Z",
+        "timee" :"10:20:00"  } expected json format*/
+    
+
+ 
+
+//@CrossOrigin(origins ="http://reactive01.herokuapp.com")
+//@CrossOrigin(origins ="http://localhost:3000")
+@RequestMapping(value = "/addstockprices",method=RequestMethod.POST)
+public  ResponseEntity<Object> stockpriceapi(@RequestBody Stockprice stockprice) throws ClassNotFoundException, IOException {
+
+ 
+
+    Stockprice stkprice= stkpricerepo.save(stockprice);
+   // make sure your entity class properties of price are in lower case and match the json,to avoid errors
+    System.out.println(stkprice +"check this " +stkprice.getCompanycode());
+
+ 
+
+    URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(stkprice.getId())
+            .toUri();
+    
+    return ResponseEntity.created(location).build();
+}
+
+ 
+
+
+//@CrossOrigin(origins ="http://localhost:3000")
+@RequestMapping(value = "/getstockprices",method=RequestMethod.GET, headers = "Accept=application/json"  )
+public List<Stockprice> getstockprice() throws ClassNotFoundException, IOException {
+    List<Stockprice> stkprice= stkpricerepo.findAll();
+   // make sure your entity class properties of user are in lower case and match the json,to avoid errors
+    return stkprice;
+}
+}
+
+
+
+
+
+
+@RestController
+@CrossOrigin
+public class Stockpricecontroller {​​​​​​​
+@Autowired
+Stockpricerepository stkpricerepo;
+/*{​​​​​​​    "exchangename": "bse",
+    "companycode": "TCS",
+    
+        "datee ": "2014-01-01T23:28:56.782Z",
+        "timee" :"10:20:00"  }​​​​​​​ expected json format*/
+    
+
+
+//@CrossOrigin(origins ="http://reactive01.herokuapp.com")
+//@CrossOrigin(origins ="http://localhost:3000")
+@RequestMapping(value = "/addstockprices",method=RequestMethod.POST)
+
+
+public  ResponseEntity<Object> stockpriceapi(@RequestBody Stockprice stockprice) throws ClassNotFoundException, IOException {​​​​​​​
+
+
+    Stockprice stkprice= stkpricerepo.save(stockprice);
+   // make sure your entity class properties of price are in lower case and match the json,to avoid errors
+    System.out.println(stkprice +"check this " +stkprice.getCompanycode());
+
+
+    URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{​​​​​​​id}​​​​​​​").buildAndExpand(stkprice.getId())
+            .toUri();
+    
+    return ResponseEntity.created(location).build();
+}​​​​​​​
+
+
+
+//@CrossOrigin(origins ="http://localhost:3000")
+@RequestMapping(value = "/getstockprices",method=RequestMethod.GET, headers = "Accept=application/json"  )
+
+
+public List<Stockprice> getstockprice() throws ClassNotFoundException, IOException {​​​​​​​
+
+
+    List<Stockprice> stkprice= stkpricerepo.findAll();
+   // make sure your entity class properties of user are in lower case and match the json,to avoid errors
+    return stkprice;
+}​​​​​​​
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

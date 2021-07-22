@@ -1,0 +1,25 @@
+Sector insert queries:
+
+insert into sector values ("Education", "This is an educations sector");
+
+insert into sector values ("Gaming", "This is an gaming sector")
+
+insert into sector values ("Pharma", "This is an pharma sector");
+
+
+
+
+-- select * from company;
+-- select * from stock_exchange;
+-- select * from sector;
+-- select * from company_stock_exchange;
+-- update stock_exchange set name = "BSE" where id=11;
+-- delete from stock_exchange where id = 13;
+
+
+
+
+
+
+
+

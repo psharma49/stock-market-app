@@ -1,0 +1,1145 @@
+body,
+html,
+#root,
+.app,
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  font-size: 28px;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  position: relative;
+  top: 90px;
+}
+
+.loginForm {
+  border: 3px solid rgb(76, 0, 153);
+  box-sizing: border-box;
+  width: 100%;
+  width: 400px;
+  height: 400px;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-shadow: 0 10px 15px 0 rgb(219, 218, 214);
+}
+
+.inputField {
+  padding-top: 16px;
+}
+
+.input {
+  box-sizing: border-box;
+  outline: none;
+  border: solid 2px rgb(76, 0, 153);
+  border-radius: 4px;
+  color: #292929;
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 1);
+}
+
+.submitButton {
+  padding-top: 16px;
+}
+
+.btn {
+  width: 100%;
+  min-width: 280px;
+  color: #fffefe;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  border: solid 1px black;
+  border-radius: 8px;
+  background: rgb(76, 0, 153);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #555;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn:active {
+  background-color: rgb(76, 0, 153);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.optummm {
+  position: relative;
+  bottom: -20px;
+  left: 80px;
+  align-items: center;
+}
+
+.optummmlogin {
+  position: relative;
+  bottom: -10px;
+  left: 70px;
+  align-items: center;
+  width: 180px;
+}
+
+.Welcome {
+  position: relative;
+  right: -860px;
+  bottom: 15px;
+  font-size: 15px;
+  color: black;
+  font-family: Arial;
+  float: inherit;
+}
+
+.logoutbutton {
+  background: rgb(76, 0, 153);
+  color: white;
+  position: relative;
+  text-align: center;
+  left: 880px;
+  bottom: 17px;
+  min-width: 70px;
+  width: 5%;
+  font-size: 10px;
+  border-radius: 4px;
+  padding: 3px 5px;
+  text-align: center;
+  cursor: pointer;
+  float: inherit;
+}
+.logoutbutton:hover {
+  background-color: rgb(85, 86, 90);
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.logoutbutton:active {
+  background-color: rgb(76, 0, 153);
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+}
+
+.col {
+  position: relative;
+  top: -20px;
+  left: 80px;
+  float: left;
+  width: 19%;
+  padding: 2px;
+  box-sizing: content-box;
+}
+
+.comm {
+  background: rgb(208, 208, 206);
+  color: black;
+  list-style-type: none;
+
+  margin: 0;
+  padding: 0;
+  transition: 0.3s;
+}
+
+.comm:hover,
+.comm {
+  box-shadow: 0 10px 15px 0 rgb(219, 218, 214);
+}
+
+.comm .header {
+  background-color: rgb(255, 255, 255);
+  color: rgb(76, 0, 153);
+  font-size: 25px;
+  text-align: center;
+}
+
+.comm .header.header-green {
+  background-color: rgb(255, 255, 254);
+}
+
+.comm li {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  font-size: 11px;
+}
+
+.comm .MRKPI {
+  background-color: white;
+  font-size: 14px;
+  color: rgb(73, 74, 77);
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .col {
+    width: 100%;
+  }
+}
+
+.mark {
+  background: rgb(208, 208, 206);
+  color: black;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  transition: 0.3s;
+}
+
+.mark:hover,
+.mark {
+  box-shadow: 0 10px 15px 0 rgb(219, 218, 214);
+}
+
+.mark .header {
+  background-color: rgb(255, 255, 255);
+  color: rgb(76, 0, 153);
+  font-size: 25px;
+  text-align: center;
+}
+
+.mark .header.header-green {
+  background-color: rgb(255, 255, 254);
+}
+
+.mark li {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  font-size: 11px;
+}
+
+.mark .MRKPI {
+  background-color: white;
+  font-size: 13px;
+  color: rgb(85, 86, 90);
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.effi {
+  background: rgb(208, 208, 206);
+  color: black;
+  list-style-type: none;
+
+  margin: 0;
+  padding: 0;
+  transition: 0.3s;
+}
+
+.effi:hover,
+.effi {
+  box-shadow: 0 10px 15px 0 rgb(219, 218, 214);
+}
+
+.effi .header {
+  background-color: rgb(255, 255, 255);
+  color: rgb(76, 0, 153);
+  font-size: 25px;
+  text-align: center;
+}
+
+.effi .header.header-green {
+  background-color: rgb(255, 255, 254);
+}
+
+.effi li {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  font-size: 11px;
+}
+
+.effi .MRKPI {
+  background-color: white;
+  font-size: 13px;
+  color: rgb(85, 86, 90);
+  text-align: center;
+}
+
+.cust {
+  background: rgb(208, 208, 206);
+  color: black;
+  list-style-type: none;
+
+  margin: 0;
+  padding: 0;
+  transition: 0.3s;
+}
+
+.cust:hover,
+.cust {
+  box-shadow: 0 10px 15px 0 rgb(219, 218, 214);
+}
+
+.cust .header {
+  background-color: rgb(255, 255, 255);
+  color: rgb(76, 0, 153);
+  font-size: 25px;
+  text-align: center;
+}
+
+.cust .header.header-green {
+  background-color: rgb(255, 255, 254);
+}
+
+.cust li {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  font-size: 11px;
+}
+
+.cust .MRKPI {
+  background-color: white;
+  font-size: 13px;
+  color: rgb(85, 86, 90);
+  text-align: center;
+}
+
+.futu {
+  background: rgb(208, 208, 206);
+  color: black;
+  list-style-type: none;
+
+  margin: 0;
+  padding: 0;
+  transition: 0.3s;
+}
+
+.futu:hover,
+.futu {
+  box-shadow: 0 10px 15px 0 rgb(219, 218, 214);
+}
+
+.futu .header {
+  background-color: rgb(255, 255, 255);
+  color: rgb(76, 0, 153);
+  font-size: 25px;
+  text-align: center;
+}
+
+.futu .header.header-green {
+  background-color: rgb(255, 255, 254);
+}
+
+.futu li {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  font-size: 11px;
+}
+
+.futu .MRKPI {
+  background-color: white;
+  font-size: 13px;
+  color: rgb(85, 86, 90);
+  text-align: center;
+}
+
+.viewby {
+  position: relative;
+  left: 70px;
+  bottom: -25px;
+  padding: 15px;
+  cursor: pointer;
+  border: 2px solid rgb(76, 0, 153);
+  width: 150px;
+  height: 70px;
+  background-color: rgb(76, 0, 153);
+  box-shadow: 0 10px 15px 0 rgb(219, 218, 214);
+}
+.viewbytext {
+  position: relative;
+  left: 45px;
+  bottom: 10px;
+}
+
+.year {
+  position: relative;
+  width: 80px;
+  text-align-last: center;
+  left: -25px;
+  top: 20px;
+  color: rgb(85, 86, 90);
+  background-color: white;
+  font-family: Arial;
+  cursor: pointer;
+  content: "\25BC";
+  border-radius: 0.25em;
+}
+.quarter {
+  position: relative;
+  left: 35px;
+  top: 30px;
+  text-align-last: center;
+  color: rgb(85, 86, 90);
+  background-color: white;
+  cursor: pointer;
+  border-radius: 0.25em;
+  width: 80px;
+}
+
+.LOBs {
+  position: relative;
+  left: 80px;
+  bottom: -8px;
+  cursor: pointer;
+}
+
+.LOB {
+  position: relative;
+  top: 27px;
+  right: 100px;
+  text-align-last: center;
+  width: 120px;
+  color: rgb(85, 86, 90);
+  background-color: white;
+  cursor: pointer;
+  border-radius: 0.25em;
+}
+
+.Portfolios {
+  position: relative;
+  left: 300px;
+  bottom: 16px;
+  cursor: pointer;
+}
+.portfolio {
+  position: relative;
+  top: 30px;
+  right: 128px;
+  width: 140px;
+  text-align-last: center;
+  color: rgb(85, 86, 90);
+  background-color: white;
+  cursor: pointer;
+  border-radius: 0.25em;
+}
+.Products {
+  position: relative;
+  left: 530px;
+  bottom: 37px;
+  cursor: pointer;
+}
+
+.product {
+  position: relative;
+  top: 29px;
+  right: 110px;
+  width: 120px;
+  text-align-last: center;
+  color: rgb(85, 86, 90);
+  background-color: white;
+  cursor: pointer;
+  border-radius: 0.25em;
+}
+.dashboardsubmit {
+  position: relative;
+  left: 1045px;
+  bottom: 150px;
+  width: 80px;
+  color: white;
+  background-color: rgb(85, 86, 90);
+  border-block-end-color: black;
+  border-radius: 4px;
+  border-color: 1px black;
+  padding: 4px 16px;
+  text-align: center;
+  text-align: left;
+  cursor: pointer;
+}
+.dashboardsubmit:hover {
+  background-color: rgb(76, 0, 153);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.dashboardsubmit:active {
+  background-color: rgb(76, 0, 153);
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+}
+
+.ProductView2 {
+  float: right;
+  position: relative;
+  right: 0px;
+  top: 5px;
+}
+.ToggleView {
+  position: relative;
+  top: 40px;
+  left: -440px;
+  float: right;
+  border: 2px solid rgb(85, 86, 90);
+  width: 300px;
+  height: 70px;
+  box-shadow: 0 10px 15px 0 rgb(219, 218, 214);
+  background-color: rgb(219, 218, 214);
+}
+.Aggr {
+  position: relative;
+  top: 30px;
+  right: -30px;
+  width: 90px;
+  color: white;
+  background-color: rgb(85, 86, 90);
+  border-color: 1px black;
+  border-block-end-color: black;
+  float: left;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.Aggr:hover {
+  background-color: rgb(76, 0, 153);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.Aggr:active {
+  background-color: rgb(76, 0, 153);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.FeatureLevel {
+  position: relative;
+  right: 30px;
+  top: 30px;
+  width: 110px;
+  color: white;
+  background-color: rgb(85, 86, 90);
+  border-block-end-color: black;
+  border-color: 1px black;
+  float: right;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.FeatureLevel:hover {
+  background-color: rgb(76, 0, 153);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.FeatureLevel:active {
+  background-color: rgb(76, 0, 153);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.colm {
+  position: relative;
+  left: 300px;
+  top: -30px;
+  float: left;
+  width: 12%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.common {
+  background: rgb(76, 0, 153);
+  color: rgb(255, 255, 255);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  transition: 0.3s;
+  font-size: smaller;
+}
+
+.common:hover,
+.common {
+  box-shadow: 0 10px 15px 0 rgb(219, 218, 214);
+}
+
+.common .header {
+  background-color: rgb(76, 0, 153);
+  color: rgb(250, 250, 250);
+  font-size: 20px;
+}
+
+.common .header.header-green {
+  background-color: rgb(255, 255, 254);
+}
+
+.common li {
+  padding: 12px;
+  border-bottom: 7px solid #eee;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .col {
+    width: 100%;
+  }
+}
+
+.feature {
+  background: rgb(85, 86, 90);
+  color: rgb(255, 255, 255);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  transition: 0.3s;
+  font-size: smaller;
+}
+
+.feature:hover,
+.feature {
+  box-shadow: 0 10px 15px 0 rgb(219, 218, 214);
+}
+
+.feature .header {
+  background-color: rgb(85, 86, 90);
+  color: rgb(250, 250, 250);
+  font-size: 20px;
+}
+
+.feature .header.header-green {
+  background-color: rgb(255, 255, 254);
+}
+
+.feature li {
+  padding: 12px;
+  border-bottom: 7px solid #eee;
+  text-align: center;
+}
+
+.Vel {
+  position: relative;
+  top: 230px;
+  left: -550px;
+  box-sizing: content-box;
+  float: right;
+}
+.Ttv {
+  position: relative;
+  top: 230px;
+  right: -190px;
+  box-sizing: content-box;
+  float: right;
+}
+
+.velocityheader {
+  color: rgb(76, 0, 153);
+  font-size: 15px;
+  list-style-type: none;
+}
+.ttvheader {
+  color: rgb(76, 0, 153);
+  font-size: 15px;
+  list-style-type: none;
+}
+.itemvel {
+  list-style-type: none;
+}
+.itemttv {
+  list-style-type: none;
+}
+
+.table {
+  border-collapse: collapse;
+  overflow: auto;
+  align-self: center;
+}
+
+.tableheaders {
+  background-color: rgb(76, 0, 153);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border: 4px solid rgb(208, 208, 206);
+  height: 40px;
+  font-size: 18px;
+  font-family: Arial;
+}
+.tabledata {
+  padding: 10px;
+  color: rgb(85, 86, 90);
+  background-color: white;
+  text-align: center;
+  border: 4px solid rgb(208, 208, 206);
+  font-size: smaller;
+  word-wrap: break-word;
+  width: 15%;
+}
+.tablegrey {
+  padding: 10px;
+  color: white;
+  background-color: rgb(85, 86, 90);
+  text-align: center;
+  border: 4px solid rgb(208, 208, 206);
+  font-size: smaller;
+  word-wrap: break-word;
+  width: 25%;
+}
+.tableheadersgrey {
+  padding: 10px;
+  color: white;
+  background-color: rgb(85, 86, 90);
+  text-align: center;
+  border: 4px solid rgb(208, 208, 206);
+  font-size: 18px;
+  font-family: Arial;
+}
+
+.scroll {
+  overflow-y: scroll;
+  height: 500px;
+  position: relative;
+}
+.tableu {
+  position: relative;
+  left: 10px;
+  overflow-y: scroll;
+  height: 500px;
+  margin-top: 20px;
+  float: left;
+}
+
+.avgttvviews {
+  position: relative;
+  right: 0px;
+  bottom: 185px;
+  float: right;
+}
+
+.ImagesProductView {
+  position: relative;
+  float: right;
+  align-items: center;
+  bottom: 30px;
+  right: -50px;
+}
+
+.productviewtable {
+  position: relative;
+  vertical-align: text-top;
+  width: 20%;
+}
+.productviewtable1 {
+  position: relative;
+  vertical-align: text-top;
+  width: 20%;
+  border: 1px solid black;
+}
+.portfolioviewtable {
+  position: relative;
+  vertical-align: text-top;
+  width: 20%;
+  right: -50px;
+  top: 70px;
+  float: none;
+  text-align: center;
+}
+
+.PortfolioView {
+  vertical-align: text-top;
+  float: right;
+  position: relative;
+  right: 110px;
+  top: -80px;
+  text-align: center;
+}
+.screentext {
+  font-size: 15px;
+  font-family: Arial;
+  text-align: center;
+  position: relative;
+  bottom: -60px;
+}
+#portgraphs {
+  float: right;
+  position: relative;
+  top: 150px;
+  right: 150px;
+  width: 900px;
+  height: 700px;
+}
+
+.uploadBulkDataButton {
+  position: relative;
+  left: -150px;
+  bottom: -120px;
+  width: 80px;
+  color: white;
+  background-color: rgb(76, 0, 153);
+  border-block-end-color: black;
+  border-radius: 4px;
+  padding: 4px 16px;
+  text-align: center;
+  text-align: left;
+  cursor: pointer;
+}
+.uploadBulkDataButton:hover {
+  background-color: #555;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.uploadBulkDataButton:active {
+  background-color: rgb(76, 0, 153);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.uploadText {
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  bottom: 120px;
+  font-size: 15px;
+  right: -50px;
+}
+.form-control {
+  position: relative;
+  top: 50px;
+  right: -40px;
+  width: 280px;
+  height: 20px;
+  padding: 2px 1px;
+  border: 1px solid rgb(124, 124, 124);
+  background-color: rgb(226, 226, 224);
+  margin: 5;
+  align-items: center;
+  align-content: flex-start;
+}
+.optummmBulk {
+  position: relative;
+  align-items: center;
+  width: 150px;
+  top: 40px;
+  right: 10px;
+}
+.uploadingForm {
+  border: 3px solid rgb(76, 0, 153);
+  box-shadow: 0 10px 15px 0 rgb(219, 218, 214);
+  padding: 2px 5px;
+  width: 400px;
+  height: 300px;
+  text-align: center;
+  align-content: center;
+  position: relative;
+  top: 100px;
+  left: 425px;
+}
+.excelonly {
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  top: 90px;
+  right: 223px;
+}
+
+.HomeButtonIcon {
+  position: relative;
+  left: 1160px;
+  width: 25px;
+  top: -22px;
+  color: white;
+}
+.uploaddataview {
+  border: 3px solid rgb(76, 0, 153);
+  box-sizing: border-box;
+  width: 100%;
+  width: 460px;
+  height: 400px;
+  padding-left: 30px;
+  padding-right: 30px;
+  position: relative;
+  bottom: 10px;
+  box-shadow: 0 10px 15px 0 rgb(219, 218, 214);
+}
+.uploaddatatext {
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  bottom: -80px;
+  font-size: 14px;
+  right: 80px;
+}
+
+.btnn {
+  width: 50px;
+  min-width: 280px;
+  color: #fffefe;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  border: solid 1px black;
+  border-radius: 8px;
+  background: #e87722;
+  cursor: pointer;
+  position: relative;
+  left: 60px;
+  top: 100px;
+}
+.btnn:hover {
+  background-color: #555;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btnn:active {
+  background-color: rgb(76, 0, 153);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.BVUpload {
+  border: 3px solid rgb(76, 0, 153);
+  box-sizing: border-box;
+  width: 100%;
+  width: 400px;
+  height: 400px;
+  padding-left: 30px;
+  padding-right: 30px;
+  position: relative;
+  bottom: 60px;
+  box-shadow: 0 10px 15px 0 rgb(219, 218, 214);
+}
+.optummmBV {
+  position: relative;
+  bottom: -20px;
+  left: 80px;
+  align-items: center;
+  width: 150px;
+}
+
+.btnBV {
+  width: 100%;
+  min-width: 280px;
+  color: #fffefe;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  border: solid 1px black;
+  border-radius: 8px;
+  background: rgb(76, 0, 153);
+  cursor: pointer;
+  position: relative;
+  top: 100px;
+}
+.btnBV:hover {
+  background-color: #555;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btnBV:active {
+  background-color: rgb(76, 0, 153);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.HeaderComponent {
+  width: 1240px;
+  height: 30px;
+  position: relative;
+  bottom: 90px;
+  background-color: white;
+  float: inherit;
+}
+.userimage {
+  position: relative;
+  left: 850px;
+  width: 20px;
+  bottom: 12px;
+}
+.dropdownsLobPortfolioProduct {
+  border: 2px solid white;
+  box-shadow: 0 10px 15px 0 rgb(219, 218, 214);
+  width: 700px;
+  height: 101px;
+  position: relative;
+  left: 300px;
+  bottom: 80px;
+}
+.commImageProduct {
+  position: relative;
+  right: 925px;
+}
+.markImageProduct {
+  position: relative;
+  right: 730px;
+}
+.effImageProduct {
+  position: relative;
+  right: 535px;
+}
+.custImageProduct {
+  position: relative;
+  right: 345px;
+}
+.futImageProduct {
+  position: relative;
+  right: 150px;
+}
+
+.commImageFeature {
+  position: relative;
+  right: 640px;
+}
+.markImageFeature {
+  position: relative;
+  right: 515px;
+}
+.effImageFeature {
+  position: relative;
+  right: 385px;
+}
+.custImageFeature {
+  position: relative;
+  right: 255px;
+}
+.futImageFeature {
+  position: relative;
+  right: 125px;
+}
+.emptydata {
+  position: relative;
+  left: 500px;
+  color: red;
+  font-size: 25px;
+}
+.errorbulkupload {
+  position: relative;
+  left: 565px;
+  bottom: 70px;
+  color: red;
+  font-size: 14px;
+  word-wrap: break-word;
+  align-self: center;
+}
+.uploadsuccessful {
+  position: relative;
+  font-family: Arial;
+  bottom: -80px;
+  font-size: 15px;
+  right: 100px;
+}
+.errorMsgLogin {
+  color: red;
+  font-size: 15px;
+  word-wrap: break-word;
+  position: relative;
+  bottom: 300px;
+}
+.errorMsgLogin1 {
+  color: red;
+  font-size: 14px;
+  word-wrap: break-word;
+  position: relative;
+  bottom: 252px;
+  right: 90px;
+}
+.errorMsgLogin2 {
+  color: red;
+  font-size: 14px;
+  word-wrap: break-word;
+  position: relative;
+  bottom: 190px;
+  right: 90px;
+}
+.UserID {
+  color: black;
+  font-size: 15px;
+  font-family: Arial;
+  position: relative;
+  left: 870px;
+  bottom: 15px;
+  float: inherit;
+}
+.Navbar {
+  width: 1240px;
+  height: 30px;
+  position: relative;
+  top: 10px;
+  background-color: #e87722;
+}
+.optumimagenavbar {
+  width: 80px;
+  position: relative;
+  left: 15px;
+}
+.navbarlabel {
+  color: white;
+  position: relative;
+  top: 2px;
+  text-align: center;
+  font-family: Arial;
+  font-size: 24px;
+}
+.ImagesFeatureView {
+  position: relative;
+  float: right;
+  align-items: center;
+  bottom: 30px;
+  right: -50px;
+}
+.ImagesPortfolioView {
+  position: relative;
+  float: right;
+  bottom: 30px;
+  right: -5px;
+}
+.commImagePortfolio {
+  position: relative;
+  right: 830px;
+}
+.markImagePortfolio {
+  position: relative;
+  right: 660px;
+}
+.effImagePortfolio {
+  position: relative;
+  right: 490px;
+}
+.custImagePortfolio {
+  position: relative;
+  right: 325px;
+}
+.futImagePortfolio {
+  position: relative;
+  right: 160px;
+}
+
+.loginName {
+  align-self: center;
+  font-family: Arial;
+}
+
+.navbar {
+  background-color: rgb(76, 0, 153);
+}
+
+.navbar li {
+  float: left;
+  list-style: none;
+  margin: 13px 20px;
+}
+
+.navbar ul {
+  overflow: auto;
+}
+
+.navbar li a {
+  padding: 3px 3px;
+  text-decoration: none;
+  color: white;
+}
+
+.search {
+  float: right;
+  color: white;
+  padding: 12px 75px;
+}
+
+.navbar input {
+  border: 2px solid rgb(76, 0, 153);
+  border-radius: 5px;
+  padding: 3px 17px;
+  width: 129px;
+}

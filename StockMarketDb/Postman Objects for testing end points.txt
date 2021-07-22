@@ -1,0 +1,40 @@
+Sector -
+
+1.  addSector - { "sectorName" : "Health",
+              "brief" : "It is a health sector"
+            } 
+
+Company - 
+
+1. addNewCompany - 
+{ 
+  "companyName" = "FamPay",
+  "turnover" = 200,
+  "ceo" = "Sambhav jain",
+  "boardOfDirector" : "Ayush",
+  "companyBrief" : "Bank for GenZ",
+  "sectorName" : "Banking"
+}
+
+StockExchange- 
+{ 
+  "stockExchangeName" : "BSE",
+  "brief" : "This is a stock exch.",
+  "remarks" : "nice exchange",
+  "contactAddress" : "Bombay"
+}
+
+{ 
+  "stockExchangeName" : "NSE",
+  "brief" : "This is a stock exch.",
+  "remarks" : good exchange",
+  "contactAddress" : "Mumbai"
+} 
+
+
+Company StockExchange map (/mapcompanycode)
+
+{ "companyName" : "FamPay",
+  "stockExhangeName" : "BSE",
+  "companyCode" : "1234"
+} 
