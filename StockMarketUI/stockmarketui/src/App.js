@@ -7,6 +7,12 @@ import AdminDashboard from "./AdminDashboard";
 import CompanyView from "./CompanyView";
 import DisplayAllCompanies from "./DisplayAllCompanies";
 import IndividualCompany from "./IndividualCompany";
+import AddCompany from "./AddCompany";
+import MapCompanyCode from "./MapCompanyCode";
+import ExchangeView from "./ExchangeView";
+import DisplayAllStockExchanges from "./DisplayAllStockExchanges";
+import CompaniesInStockExchange from "./CompaniesInStockExchange";
+import AddStockExchange from "./AddStockExchange";
 
 function App() {
   return (
@@ -28,11 +34,34 @@ function App() {
             path="/individualCompany:companyId"
             component={IndividualCompany}
           />
-          {/* <AuthenticatedRoute exact path="/imagess" component={imagess}/>
-                 <AuthenticatedRoute exact path="/HeaderComponent" component={HeaderComponent}/>
-                 <AuthenticatedRoute exact path="/BVUpload" component={BVUpload}/>
-                 <AuthenticatedRoute exact path="/BulkUpload" component={BulkUpload}/>
-                 <AuthenticatedRoute exact path="/UploadSuccessful" component={UploadSuccessful}/> */}
+          <Route
+            exact
+            path="/getAllCompaniesInThisExchange:id"
+            component={CompaniesInStockExchange}
+          />
+          <Route path="/addCompany" component={AddCompany} />
+          <Route path="/addStockExchange" component={AddStockExchange} />
+          <Route
+            path="/mapCompanyAndStockExchange"
+            component={MapCompanyCode}
+          />
+          <Route path="/ExchangeView" component={ExchangeView} />
+          <Route
+            path="/displayAllStockExchanges"
+            component={DisplayAllStockExchanges}
+          />
+          {/* <AuthenticatedRoute
+            exact
+            path="/HeaderComponent"
+            component={HeaderComponent}
+          />
+          <AuthenticatedRoute exact path="/BVUpload" component={BVUpload} />
+          <AuthenticatedRoute exact path="/BulkUpload" component={BulkUpload} />
+          <AuthenticatedRoute
+            exact
+            path="/UploadSuccessful"
+            component={UploadSuccessful}
+          /> */}
         </Switch>
       </>
     </Router>

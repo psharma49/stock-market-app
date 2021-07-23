@@ -35,29 +35,29 @@ const useStyles = withStyles({
   },
 });
 
-export default class DisplayAllCompanies extends Component {
+export default class DisplayAllStockExchanges extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      companiesList: [],
+      stockExchangeList: [],
       errorMsg: "",
-      companyDetails: [],
+      stockExchangeDetails: [],
     };
   }
   componentDidMount() {
-    this.getAllCompanies();
+    this.getAllStockExchanges();
   }
 
-  getAllCompanies() {
-    DataService.retrieveCompanyList()
+  getAllStockExchanges() {
+    DataService.retrieveStockExchangeList()
       .then((response) => {
         console.log(response);
-        this.setState({ companiesList: response.data });
+        this.setState({ stockExchangeList: response.data });
       })
       .catch((error) => {
         console.log(error);
-        this.setState({ errorMsg: "Error retrieving company list" });
+        this.setState({ errorMsg: "Error retrieving stock exchange list" });
       });
   }
 
@@ -70,31 +70,31 @@ export default class DisplayAllCompanies extends Component {
           <Table aria-label="customized table">
             <TableHead>
               <TableRow>
-                <StyledTableCell>Company Name</StyledTableCell>
-                <StyledTableCell>CEO</StyledTableCell>
+                <StyledTableCell>Stock Exchange Name</StyledTableCell>
                 <StyledTableCell>Brief&nbsp;</StyledTableCell>
-                <StyledTableCell>Sector Name&nbsp;</StyledTableCell>
-                <StyledTableCell>Get full details&nbsp;</StyledTableCell>
+                <StyledTableCell>Contact Address&nbsp;</StyledTableCell>
+                <StyledTableCell>Remarks&nbsp;</StyledTableCell>
+                <StyledTableCell>Get All Companies&nbsp;</StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {this.state.companiesList.map((row) => (
-                <StyledTableRow key={row.companyId}>
+              {this.state.stockExchangeList.map((row) => (
+                <StyledTableRow key={row.id}>
                   <StyledTableCell component="th" scope="row">
-                    {row.companyName}
+                    {row.stockExchangeName}
                   </StyledTableCell>
-                  <StyledTableCell>{row.ceo}</StyledTableCell>
-                  <StyledTableCell>{row.companyBrief}</StyledTableCell>
-                  <StyledTableCell>{row.sectorName}</StyledTableCell>
+                  <StyledTableCell>{row.brief}</StyledTableCell>
+                  <StyledTableCell>{row.contactAddress}</StyledTableCell>
+                  <StyledTableCell>{row.remarks}</StyledTableCell>
                   <StyledTableCell>
                     <label>
                       <Button
                         variant="outlined"
                         size="small"
                         color="primary"
-                        href={`http://localhost:3000/individualCompany${row.companyId}`}
+                        href={`http://localhost:3000/getAllCompaniesInThisExchange${row.id}`}
                       >
-                        Full details
+                        Companies
                       </Button>
                     </label>
                   </StyledTableCell>

@@ -35,34 +35,35 @@ const useStyles = withStyles({
   },
 });
 
-export default class DisplayAllCompanies extends Component {
+export default class CompaniesInStockExchange extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      companiesList: [],
+      listOfCompaniesInThisExchange: [],
       errorMsg: "",
-      companyDetails: [],
     };
   }
+
   componentDidMount() {
-    this.getAllCompanies();
+    this.getAllCompaniesInAStockExchange(this.props.match.params.id);
   }
 
-  getAllCompanies() {
-    DataService.retrieveCompanyList()
+  getAllCompaniesInAStockExchange(id) {
+    DataService.retrieveStockExchangeListOfCompany(id)
       .then((response) => {
         console.log(response);
-        this.setState({ companiesList: response.data });
+        this.setState({ listOfCompaniesInThisExchange: response.data });
       })
       .catch((error) => {
         console.log(error);
-        this.setState({ errorMsg: "Error retrieving company list" });
+        this.setState({
+          errorMsg: "Error retrieving StockExchange List Of Company",
+        });
       });
   }
 
   render() {
-    const { classes } = this.props;
     return (
       <div>
         <AdminDashboard />
@@ -78,7 +79,7 @@ export default class DisplayAllCompanies extends Component {
               </TableRow>
             </TableHead>
             <TableBody>
-              {this.state.companiesList.map((row) => (
+              {this.state.listOfCompaniesInThisExchange.map((row) => (
                 <StyledTableRow key={row.companyId}>
                   <StyledTableCell component="th" scope="row">
                     {row.companyName}

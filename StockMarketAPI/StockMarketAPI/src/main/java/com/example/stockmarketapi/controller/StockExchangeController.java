@@ -48,10 +48,10 @@ public class StockExchangeController {
 		return stockExchangeService.getStockExchangeByName(stockExchangeName);
 	}
 	
-	@RequestMapping(value = "/getCompanyListInAStockExchange/{stockId}", method = RequestMethod.GET)
-	public List<Company> getCompanyListInAStockExchange(@PathVariable ("stockId") Long stockId)
+	@RequestMapping(value = "/getCompanyListInAStockExchange/{id}", method = RequestMethod.GET)
+	public List<Company> getCompanyListInAStockExchange(@PathVariable ("id") Long id)
 	{
-		return stockExchangeService.getCompanyListInAStockExchange(stockId);
+		return stockExchangeService.getCompanyListInAStockExchange(id);
 	}
 	
 	

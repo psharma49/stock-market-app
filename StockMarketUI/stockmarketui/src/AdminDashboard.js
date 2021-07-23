@@ -23,7 +23,9 @@ export default class AdminDashboard extends Component {
                 <a href="http://localhost:3000/CompanyView">Manage Companies</a>
               </li>
               <li>
-                <a href="#">Manage Exchanges</a>
+                <a href="http://localhost:3000/ExchangeView">
+                  Manage Exchanges
+                </a>
               </li>
               <li>
                 <a href="#">Sector</a>

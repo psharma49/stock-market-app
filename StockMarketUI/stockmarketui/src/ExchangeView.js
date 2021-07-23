@@ -9,14 +9,11 @@ export default class CompanyView extends Component {
     this.state = {};
   }
 
-  getCompanyList() {
-    this.props.history.push("/displayAllCompanies");
+  getStockExchangeList() {
+    this.props.history.push("/displayAllStockExchanges");
   }
-  addCompany() {
-    this.props.history.push("/addCompany");
-  }
-  mapCompanyCode() {
-    this.props.history.push("/mapCompanyAndStockExchange");
+  addStockExchange() {
+    this.props.history.push("/addStockExchange");
   }
 
   render() {
@@ -28,7 +25,7 @@ export default class CompanyView extends Component {
             type="text"
             name="search"
             id="search"
-            placeholder="Search company"
+            placeholder="Search stock exchange"
           />
           <Button variant="contained" size="small" color="primary">
             Search
@@ -38,21 +35,22 @@ export default class CompanyView extends Component {
           <div className="container">
             <div className="BVUpload">
               <div className="screentext">
-                <label>Manage Companies</label>
+                <label>Manage Stock Exchanges</label>
               </div>
               <div className="upload">
-                <button className="btnBV" onClick={() => this.getCompanyList()}>
-                  Get Company List
+                <button
+                  className="btnBV"
+                  onClick={() => this.getStockExchangeList()}
+                >
+                  Get Stock Exchange List
                 </button>
               </div>
               <div className="dashboardbutton">
-                <button className="btnBV" onClick={() => this.addCompany()}>
-                  Add a company
-                </button>
-              </div>
-              <div className="dashboardbutton">
-                <button className="btnBV" onClick={() => this.mapCompanyCode()}>
-                  Map company code
+                <button
+                  className="btnBV"
+                  onClick={() => this.addStockExchange()}
+                >
+                  Add a Stock Exchange
                 </button>
               </div>
             </div>

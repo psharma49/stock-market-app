@@ -41,6 +41,7 @@ public class UserController {
 		headers.add("Responded", "UserController");
 		headers.add("Access-Control-Allow-Origin", "*");
 		sendemail(user.getId());
+		Users user1 = usersRepository.getById(user.getId());
 		return ResponseEntity.status(HttpStatus.OK).build();
 	}
 

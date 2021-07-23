@@ -1143,3 +1143,28 @@ html,
   padding: 3px 17px;
   width: 129px;
 }
+
+.addCompany {
+  margin: auto;
+  width: 30%;
+  height: 400px;
+  border: 3px solid rgb(76, 0, 153);
+  position: relative;
+  top: 75px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.form {
+  position: relative;
+  left: 65px;
+  top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.addCompanyButton {
+  position: relative;
+  top: 20px;
+  left: 55px;
+}

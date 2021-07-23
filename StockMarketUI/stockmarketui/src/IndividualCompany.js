@@ -43,18 +43,20 @@ export default class IndividualCompany extends Component {
       companyDetails: [],
     };
 
-    this.getAllStockExchangeInCompany =
-      this.getAllStockExchangeInCompany.bind(this);
     this.getCompanyDetails = this.getCompanyDetails.bind(this);
+    this.retrieveStockExchangesACompanyListedIn =
+      this.retrieveStockExchangesACompanyListedIn.bind(this);
   }
 
   componentDidMount() {
-    this.getAllStockExchangeInCompany(this.props.match.params.companyId);
     this.getCompanyDetails(this.props.match.params.companyId);
+    this.retrieveStockExchangesACompanyListedIn(
+      this.props.match.params.companyId
+    );
   }
 
-  getAllStockExchangeInCompany(companyId) {
-    DataService.retrieveStockExchangeListOfCompany(companyId)
+  retrieveStockExchangesACompanyListedIn(companyId) {
+    DataService.StockExchangesACompanyListedIn(companyId)
       .then((response) => {
         console.log(response);
         this.setState({ stockExchangeListOfCompany: response.data });
@@ -75,7 +77,7 @@ export default class IndividualCompany extends Component {
       })
       .catch((error) => {
         console.log(error);
-        this.setState({ errorMsg: "Error retrieving Portfolios" });
+        this.setState({ errorMsg: "Error retrieving Company details" });
       });
   }
 
@@ -134,6 +136,15 @@ export default class IndividualCompany extends Component {
                 </StyledTableCell>
                 <StyledTableCell component="th" scope="row">
                   {this.state.companyDetails.turnover}
+                </StyledTableCell>
+              </StyledTableRow>
+
+              <StyledTableRow>
+                <StyledTableCell component="th" scope="row">
+                  Board Of Directors
+                </StyledTableCell>
+                <StyledTableCell component="th" scope="row">
+                  {this.state.companyDetails.boardOfDirectors}
                 </StyledTableCell>
               </StyledTableRow>
 

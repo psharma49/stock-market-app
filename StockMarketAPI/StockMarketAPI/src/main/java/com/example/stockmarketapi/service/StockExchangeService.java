@@ -38,8 +38,8 @@ public class StockExchangeService {
 		return stockExchangeRepository.findByStockExchangeName(stockExchangeName);
 	}
 
-	public List<Company> getCompanyListInAStockExchange(Long stockId) {
-		StockExchange stockExchange = stockExchangeRepository.findById(stockId).get();
+	public List<Company> getCompanyListInAStockExchange(Long id) {
+		StockExchange stockExchange = stockExchangeRepository.findById(id).get();
 		List<CompanyStockExchange> companyStockExchangeMap = stockExchange.getCompstockmap();
 		List<Company> companyList = companyStockExchangeMap.stream().map(x -> x.getCompany()).collect(Collectors.toList());
 		return companyList;

@@ -7,6 +7,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -58,9 +60,10 @@ public class CompanyController {
 		
 	
 	@RequestMapping(value = "/addNewCompany", method = RequestMethod.POST)
-	public void addNewCompany(@RequestBody Company company)
+	public ResponseEntity<Void> addNewCompany(@RequestBody Company company)
 	{
 		companyService.addNewCompany(company);
+		return ResponseEntity.status(HttpStatus.OK).build();
 	}
 	
 	

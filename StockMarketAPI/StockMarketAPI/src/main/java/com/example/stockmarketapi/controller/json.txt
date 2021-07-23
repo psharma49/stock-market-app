@@ -270,6 +270,58 @@ public List<Stockprice> getstockprice() throws ClassNotFoundException, IOExcepti
 
 
 
+Deployment steps
+1.Create account in heroku
+2. TEst your Application locally,that it is working fine.
+3. Create first app in Heroku
+4. Deploy the main branch from github //JAva app
+5. Now in your local react app,change the endpoint url to this
+   new heroku java app
+6. save the react changes and upload to github
+7. Create new heroku app and select build pack
+   https://github.com/mars/create-react-app-buildpack
+8. deploy the master branch from gihub //react app
+7.  TEst it out
+
+
+
+@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss")
+    private LocalTime timee;//
+
+
+
+
+[16:18] Ram R (Naren) (Guest)
+     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss")
+    private LocalTime timee;//
+​[16:18] Ram R (Naren) (Guest)
+    for localtime field
+
+
+
+
+1. this.state = chartConfigs;
+                
+2. var prevDs = Object.assign({​​​​​​​}​​​​​​​, this.state.dataSource);
+                        
+                                        response.forEach((value, key) => {​​​​​​​  
+                                    //        categories[key] = {​​​​​​​
+                                        prevDs.data[key] ={​​​​​​​
+                                        
+                                            'label' : response[key].companycode,
+                                            'value' : response[key].shareprice
+                                         }​​​​​​​;
+                                    
+                                         
+                                         this.setState({​​​​​​​
+                                            dataSource: prevDs,
+                                          }​​​​​​​);
+                   
+                                    }​​​​​​​);
+
+
+
+3. try same with dataset 
 
 
 

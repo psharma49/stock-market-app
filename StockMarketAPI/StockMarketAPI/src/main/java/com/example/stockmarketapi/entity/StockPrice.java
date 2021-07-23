@@ -31,8 +31,9 @@ public class StockPrice {
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Company company;
 	
-//	@JsonFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(shape = JsonFormat.Shape.STRING,pattern="yyyy-MM-dd")
 	private Date datee;
+	
 	
 	private Time timee;
 	
