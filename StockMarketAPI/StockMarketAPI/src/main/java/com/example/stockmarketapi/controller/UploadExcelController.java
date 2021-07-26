@@ -1,8 +1,11 @@
 package com.example.stockmarketapi.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,9 +23,10 @@ public class UploadExcelController {
 	private StockPriceService stockPriceService;
 	
 	@RequestMapping(value = "/uploadStockPriceExcel", method = RequestMethod.POST)
-	public void uploadStockPriceExcelExcel(@RequestBody List<StockPrice> stockPriceList)
+	public ResponseEntity<Void> uploadStockPriceExcel(@RequestBody  List<List<Object>> stockPriceList)
 	{
 		stockPriceService.uploadStockPriceExcel(stockPriceList);
+		return ResponseEntity.status(HttpStatus.OK).build();
 	}
 
 }

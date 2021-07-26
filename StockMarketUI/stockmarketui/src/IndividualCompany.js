@@ -9,6 +9,7 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import DataService from "./DataService";
 import AdminDashboard from "./AdminDashboard";
+import Button from "@material-ui/core/Button";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -41,6 +42,7 @@ export default class IndividualCompany extends Component {
     this.state = {
       stockExchangeListOfCompany: [],
       companyDetails: [],
+      cId: this.props.match.params.companyId,
     };
 
     this.getCompanyDetails = this.getCompanyDetails.bind(this);
@@ -159,6 +161,24 @@ export default class IndividualCompany extends Component {
             </TableBody>
           </Table>
         </TableContainer>
+        <div>
+          <Button
+            variant="outlined"
+            size="large"
+            color="primary"
+            href={`http://localhost:3000/updateCompany${this.props.match.params.companyId}`}
+          >
+            Edit Details
+          </Button>
+          <Button
+            variant="outlined"
+            size="large"
+            color="primary"
+            href={`http://localhost:3000/addIPO${this.props.match.params.companyId}`}
+          >
+            Add IPO
+          </Button>
+        </div>
       </div>
     );
   }

@@ -15,7 +15,8 @@ public interface StockPriceRepository extends JpaRepository<StockPrice,Long>
 
 	@Query(value="select * from stock_price where company_id = :company_id and datee between :start_date and :end_date", nativeQuery=true)
 	public List<StockPrice> findStockPriceDetailsBetweenDates(@Param("company_id")Long companyId, @Param("start_date") Date startDate, 
-			                                                                                       @Param("end_date") Date endDate);
+			                                                                                       @Param("end_date") Date endDate
+			                                                                                   );
 	
 	
 	public List<StockPrice> findByDateeBetween(Date startDate,Date endDate);

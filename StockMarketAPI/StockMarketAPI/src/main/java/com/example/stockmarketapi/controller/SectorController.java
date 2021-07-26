@@ -3,6 +3,8 @@ package com.example.stockmarketapi.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,6 +32,8 @@ public class SectorController {
 		return sectorService.getSectorList();
 	}
 	
+	
+	
 	@RequestMapping(value = "/getSectorById/{id}", method = RequestMethod.GET)
 	public Sector getSectorById(@PathVariable ("id") Long id)
 	{
@@ -40,12 +44,22 @@ public class SectorController {
 	public List<Company> getAllCompaniesInASector(@PathVariable ("id") Long id)
 	{
 		return sectorService.getAllCompaniesInASector(id);
+		
 	}
 	
 	@RequestMapping(value = "/addNewSector", method = RequestMethod.POST)
-	public void addNewSector(@RequestBody Sector sector)
+	public ResponseEntity<Void> addNewSector(@RequestBody Sector sector)
 	{
 		sectorService.addNewSector(sector);
+		return ResponseEntity.status(HttpStatus.OK).build();
+	}
+	
+	
+	@RequestMapping(value = "/updateSector", method = RequestMethod.POST)
+	public ResponseEntity<Void> updateSector(@RequestBody Sector sector)
+	{
+		sectorService.updateSector(sector);
+		return ResponseEntity.status(HttpStatus.OK).build();
 	}
 	
 	

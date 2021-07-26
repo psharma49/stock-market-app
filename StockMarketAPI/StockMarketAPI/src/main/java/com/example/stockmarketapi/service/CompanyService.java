@@ -58,7 +58,17 @@ public class CompanyService {
 
 	public void updateNewCompany(Company company) 
 	{
-		companyRepository.save(company);
+		Company cmp = companyRepository.findById(company.getCompanyId()).get();
+		cmp.setBoardOfDirectors(company.getBoardOfDirectors());
+		cmp.setCompanyName(company.getCompanyName());
+		cmp.setCeo(company.getCeo());
+		cmp.setCompanyBrief(company.getCompanyBrief());
+		cmp.setCompanyName(company.getCompanyName());
+		cmp.setSectorName(company.getSectorName());
+		cmp.setTurnover(company.getTurnover());
+		Sector sector = sectorRepository.findBySectorName(company.getSectorName());
+		cmp.setSector(sector);
+		companyRepository.save(cmp);
 	}
 
 

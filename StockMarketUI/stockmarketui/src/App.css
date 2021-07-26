@@ -20,7 +20,7 @@ html,
 }
 
 .loginForm {
-  border: 3px solid rgb(76, 0, 153);
+  border: 3px solid #000;
   box-sizing: border-box;
   width: 100%;
   width: 400px;
@@ -37,7 +37,7 @@ html,
 .input {
   box-sizing: border-box;
   outline: none;
-  border: solid 2px rgb(76, 0, 153);
+  border: solid 2px #000;
   border-radius: 4px;
   color: #292929;
   width: 100%;
@@ -59,7 +59,7 @@ html,
   font-weight: bold;
   border: solid 1px black;
   border-radius: 8px;
-  background: rgb(76, 0, 153);
+  background: #000;
   cursor: pointer;
 }
 
@@ -70,7 +70,7 @@ html,
 }
 
 .btn:active {
-  background-color: rgb(76, 0, 153);
+  background-color: #000;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
@@ -101,7 +101,7 @@ html,
 }
 
 .logoutbutton {
-  background: rgb(76, 0, 153);
+  background: #000;
   color: white;
   position: relative;
   text-align: center;
@@ -121,7 +121,7 @@ html,
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 .logoutbutton:active {
-  background-color: rgb(76, 0, 153);
+  background-color: #000;
   box-shadow: 0 2px #666;
   transform: translateY(4px);
 }
@@ -153,7 +153,7 @@ html,
 
 .comm .header {
   background-color: rgb(255, 255, 255);
-  color: rgb(76, 0, 153);
+  color: #000;
   font-size: 25px;
   text-align: center;
 }
@@ -348,10 +348,10 @@ html,
   bottom: -25px;
   padding: 15px;
   cursor: pointer;
-  border: 2px solid rgb(76, 0, 153);
+  border: 2px solid #000;
   width: 150px;
   height: 70px;
-  background-color: rgb(76, 0, 153);
+  background-color: #000;
   box-shadow: 0 10px 15px 0 rgb(219, 218, 214);
 }
 .viewbytext {
@@ -455,13 +455,13 @@ html,
   cursor: pointer;
 }
 .dashboardsubmit:hover {
-  background-color: rgb(76, 0, 153);
+  background-color: #000;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .dashboardsubmit:active {
-  background-color: rgb(76, 0, 153);
+  background-color: #000;
   box-shadow: 0 2px #666;
   transform: translateY(4px);
 }
@@ -497,13 +497,13 @@ html,
   cursor: pointer;
 }
 .Aggr:hover {
-  background-color: rgb(76, 0, 153);
+  background-color: #000;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .Aggr:active {
-  background-color: rgb(76, 0, 153);
+  background-color: #000;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
@@ -522,13 +522,13 @@ html,
   cursor: pointer;
 }
 .FeatureLevel:hover {
-  background-color: rgb(76, 0, 153);
+  background-color: #000;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .FeatureLevel:active {
-  background-color: rgb(76, 0, 153);
+  background-color: #000;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
@@ -544,7 +544,7 @@ html,
 }
 
 .common {
-  background: rgb(76, 0, 153);
+  background: #000;
   color: rgb(255, 255, 255);
   list-style-type: none;
   margin: 0;
@@ -559,7 +559,7 @@ html,
 }
 
 .common .header {
-  background-color: rgb(76, 0, 153);
+  background-color: #000;
   color: rgb(250, 250, 250);
   font-size: 20px;
 }
@@ -627,12 +627,12 @@ html,
 }
 
 .velocityheader {
-  color: rgb(76, 0, 153);
+  color: #000;
   font-size: 15px;
   list-style-type: none;
 }
 .ttvheader {
-  color: rgb(76, 0, 153);
+  color: #000;
   font-size: 15px;
   list-style-type: none;
 }
@@ -650,7 +650,7 @@ html,
 }
 
 .tableheaders {
-  background-color: rgb(76, 0, 153);
+  background-color: #000;
   color: white;
   padding: 10px;
   text-align: center;
@@ -769,7 +769,7 @@ html,
   bottom: -120px;
   width: 80px;
   color: white;
-  background-color: rgb(76, 0, 153);
+  background-color: #000;
   border-block-end-color: black;
   border-radius: 4px;
   padding: 4px 16px;
@@ -784,7 +784,7 @@ html,
 }
 
 .uploadBulkDataButton:active {
-  background-color: rgb(76, 0, 153);
+  background-color: #000;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
@@ -816,7 +816,7 @@ html,
   right: 10px;
 }
 .uploadingForm {
-  border: 3px solid rgb(76, 0, 153);
+  border: 3px solid #000;
   box-shadow: 0 10px 15px 0 rgb(219, 218, 214);
   padding: 2px 5px;
   width: 400px;
@@ -843,7 +843,7 @@ html,
   color: white;
 }
 .uploaddataview {
-  border: 3px solid rgb(76, 0, 153);
+  border: 3px solid #000;
   box-sizing: border-box;
   width: 100%;
   width: 460px;
@@ -871,7 +871,7 @@ html,
   font-weight: bold;
   border: solid 1px black;
   border-radius: 8px;
-  background: #e87722;
+  background: #000;
   cursor: pointer;
   position: relative;
   left: 60px;
@@ -884,12 +884,12 @@ html,
 }
 
 .btnn:active {
-  background-color: rgb(76, 0, 153);
+  background-color: #000;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 .BVUpload {
-  border: 3px solid rgb(76, 0, 153);
+  border: 3px solid #000;
   box-sizing: border-box;
   width: 100%;
   width: 400px;
@@ -917,7 +917,7 @@ html,
   font-weight: bold;
   border: solid 1px black;
   border-radius: 8px;
-  background: rgb(76, 0, 153);
+  background: #000;
   cursor: pointer;
   position: relative;
   top: 100px;
@@ -929,7 +929,7 @@ html,
 }
 
 .btnBV:active {
-  background-color: rgb(76, 0, 153);
+  background-color: #000;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
@@ -1057,7 +1057,7 @@ html,
   height: 30px;
   position: relative;
   top: 10px;
-  background-color: #e87722;
+  background-color: #000;
 }
 .optumimagenavbar {
   width: 80px;
@@ -1112,7 +1112,7 @@ html,
 }
 
 .navbar {
-  background-color: rgb(76, 0, 153);
+  background-color: #000;
 }
 
 .navbar li {
@@ -1138,7 +1138,7 @@ html,
 }
 
 .navbar input {
-  border: 2px solid rgb(76, 0, 153);
+  border: 2px solid #000;
   border-radius: 5px;
   padding: 3px 17px;
   width: 129px;
@@ -1148,7 +1148,7 @@ html,
   margin: auto;
   width: 30%;
   height: 400px;
-  border: 3px solid rgb(76, 0, 153);
+  border: 3px solid #000;
   position: relative;
   top: 75px;
   padding-left: 30px;
@@ -1167,4 +1167,51 @@ html,
   position: relative;
   top: 20px;
   left: 55px;
+}
+
+.addExcel {
+  margin: auto;
+  width: 25%;
+  height: 300px;
+  border: 3px solid #000;
+  position: relative;
+  top: 75px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.uploadExcelButton {
+  position: relative;
+  top: 130px;
+  left: 10px;
+}
+.uploadControl {
+  position: relative;
+  right: 30px;
+  top: 60px;
+}
+.uploadExcelSuccessful {
+  position: relative;
+  font-family: Arial;
+  /* bottom: -80px; */
+  font-size: 100px;
+  right: 100px;
+}
+
+.searchBar {
+  border: 1px black;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.auto-complete {
+  position: relative;
+  left: 1000px;
+}
+
+.manageCompany {
+  color: Black;
+  padding: 8px;
+  font-family: Arial;
+  font-size: 25px;
 }

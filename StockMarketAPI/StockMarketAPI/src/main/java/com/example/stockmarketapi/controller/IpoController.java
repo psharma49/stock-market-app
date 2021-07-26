@@ -3,13 +3,18 @@ package com.example.stockmarketapi.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.stockmarketapi.entity.Company;
 import com.example.stockmarketapi.entity.IpoDetails;
+import com.example.stockmarketapi.repository.CompanyRepository;
 import com.example.stockmarketapi.service.IpoDetailsService;
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -32,5 +37,12 @@ public class IpoController {
 		return ipoDetailsService.getIpoById(id);
 	}
 	
-
+	@RequestMapping(value = "/addIPO/{companyId}", method = RequestMethod.POST)
+	public ResponseEntity<Void> addIPO(@RequestBody IpoDetails ipoDetails, @PathVariable ("companyId") Long companyId)
+	{
+		ipoDetailsService.addIPO(ipoDetails,companyId);
+		return ResponseEntity.status(HttpStatus.OK).build();
+	}
+	
+	
 }

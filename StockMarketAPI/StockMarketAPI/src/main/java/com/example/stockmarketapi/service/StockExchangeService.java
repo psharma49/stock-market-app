@@ -44,6 +44,17 @@ public class StockExchangeService {
 		List<Company> companyList = companyStockExchangeMap.stream().map(x -> x.getCompany()).collect(Collectors.toList());
 		return companyList;
 	}
+
+	public void updateStockExchange(StockExchange stockExchange) {
+		StockExchange stckEx = stockExchangeRepository.findById(stockExchange.getId()).get();
+		stckEx.setstockExchangeName(stockExchange.getstockExchangeName());
+		stckEx.setBrief(stockExchange.getBrief());
+		stckEx.setContactAddress(stockExchange.getContactAddress());
+		stckEx.setstockExchangeName(stockExchange.getstockExchangeName());
+		stckEx.setRemarks(stockExchange.getRemarks());
+		stockExchangeRepository.save(stckEx);
+		
+	}
 	
 
 

@@ -1,6 +1,6 @@
 package com.example.stockmarketapi.controller;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import java.time.LocalDate;
@@ -23,12 +23,13 @@ public class StockPriceController {
 	@Autowired
 	private StockPriceService stockPriceService;
 	
-	@GetMapping("/getCompanyStockPrice/{companyId}/{startDate}/{endDate}")
+	@GetMapping("/getCompanyStockPrice/{companyId}/{startDate}/{endDate}/{stockExchangeName}")
 	public List<StockPrice> findCompanyStockPriceDetails(@PathVariable ("companyId") Long companyId,
 			@PathVariable ("startDate") Date startDate,
-			@PathVariable ("endDate") Date endDate){
+			@PathVariable ("endDate") Date endDate,
+			@PathVariable ("stockExchangeName") String stockExchangeName){
 		
-		return stockPriceService.findCompanyStockPriceDetails(companyId, startDate, endDate);
+		return stockPriceService.findCompanyStockPriceDetails(companyId, startDate, endDate,stockExchangeName);
 	}
 
 }

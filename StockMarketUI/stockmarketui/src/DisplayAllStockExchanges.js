@@ -75,6 +75,7 @@ export default class DisplayAllStockExchanges extends Component {
                 <StyledTableCell>Contact Address&nbsp;</StyledTableCell>
                 <StyledTableCell>Remarks&nbsp;</StyledTableCell>
                 <StyledTableCell>Get All Companies&nbsp;</StyledTableCell>
+                <StyledTableCell>Edit Stock Ex.&nbsp;</StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -95,6 +96,18 @@ export default class DisplayAllStockExchanges extends Component {
                         href={`http://localhost:3000/getAllCompaniesInThisExchange${row.id}`}
                       >
                         Companies
+                      </Button>
+                    </label>
+                  </StyledTableCell>
+                  <StyledTableCell>
+                    <label>
+                      <Button
+                        variant="outlined"
+                        size="small"
+                        color="primary"
+                        href={`http://localhost:3000/updateStockExchange${row.id}`}
+                      >
+                        Edit
                       </Button>
                     </label>
                   </StyledTableCell>

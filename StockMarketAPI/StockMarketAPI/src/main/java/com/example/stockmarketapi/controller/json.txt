@@ -330,10 +330,17 @@ Deployment steps
 
 
 
+comparison charts between range of dates only
 
 
 
 
+
+In web security config file - 
+.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        httpSecurity.cors(); //critial step to avoid perflight cors errors when both cors and antmatchers are there
+        //this enables h2 console freames in local machine
+           httpSecurity.headers().frameOptions().sameOrigin();
 
 
 

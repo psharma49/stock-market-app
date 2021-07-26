@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,10 +32,19 @@ public class StockExchangeController {
 	}
 	
 	@RequestMapping(value = "/addStockExchange", method = RequestMethod.POST)
-	public void addStockExchange(@RequestBody StockExchange stockExchange)
+	public ResponseEntity<Void> addStockExchange(@RequestBody StockExchange stockExchange)
 	{
 		stockExchangeService.addStockExchange(stockExchange);
+		return ResponseEntity.status(HttpStatus.OK).build();
 	}
+	
+	@RequestMapping(value = "/updateStockExchange", method = RequestMethod.POST)
+	public ResponseEntity<Void> updateStockExchange(@RequestBody StockExchange stockExchange)
+	{
+		stockExchangeService.updateStockExchange(stockExchange);
+		return ResponseEntity.status(HttpStatus.OK).build();
+	}
+	
 	
 	@RequestMapping(value = "/getStockExchangeById/{id}", method = RequestMethod.GET)
 	public StockExchange  getStockExchangeById(@PathVariable ("id") Long id)

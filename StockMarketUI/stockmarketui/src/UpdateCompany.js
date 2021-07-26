@@ -18,18 +18,20 @@ const useStyles = withStyles((theme) => ({
   },
 }));
 
-export default class AddCompany extends Component {
+export default class UpdateCompany extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       companyName: "",
+      companyId: this.props.match.params.companyId,
       ceo: "",
       boardOfDirectors: "",
       companyBrief: "",
       sectorName: "",
       turnover: "",
       errorMsg: "",
+      companyDetails: [],
       sectorsList: [],
     };
     this.handleCompanyChange = this.handleCompanyChange.bind(this);
@@ -39,9 +41,13 @@ export default class AddCompany extends Component {
     this.handleCompanyBriefChange = this.handleCompanyBriefChange.bind(this);
     this.handleTurnoverChange = this.handleTurnoverChange.bind(this);
     this.handleSectorNameChange = this.handleSectorNameChange.bind(this);
+    this.updateThisCompany = this.updateThisCompany.bind(this);
+    this.getCompanyDetails = this.getCompanyDetails.bind(this);
     this.getAllSectors = this.getAllSectors.bind(this);
   }
+
   componentDidMount() {
+    this.getCompanyDetails(this.props.match.params.companyId);
     this.getAllSectors();
   }
 
@@ -54,6 +60,18 @@ export default class AddCompany extends Component {
       .catch((error) => {
         console.log(error);
         this.setState({ errorMsg: "Error retrieving sector list" });
+      });
+  }
+
+  getCompanyDetails(companyId) {
+    DataService.retrieveCompanyDetails(companyId)
+      .then((response) => {
+        console.log(response);
+        this.setState({ companyDetails: response.data });
+      })
+      .catch((error) => {
+        console.log(error);
+        this.setState({ errorMsg: "Error retrieving Company details" });
       });
   }
 
@@ -94,22 +112,38 @@ export default class AddCompany extends Component {
     });
   }
 
-  addThisCompany() {
+  updateThisCompany() {
     var data = {
-      companyName: this.state.companyName,
-      ceo: this.state.ceo,
-      boardOfDirectors: this.state.boardOfDirectors,
-      companyBrief: this.state.companyBrief,
-      sectorName: this.state.sectorName,
-      turnover: this.state.turnover,
+      companyName: this.state.companyName
+        ? this.state.companyName
+        : this.state.companyDetails.companyName,
+
+      ceo: this.state.ceo ? this.state.ceo : this.state.companyDetails.ceo,
+
+      boardOfDirectors: this.state.boardOfDirectors
+        ? this.state.boardOfDirectors
+        : this.state.companyDetails.boardOfDirectors,
+
+      companyBrief: this.state.companyBrief
+        ? this.state.companyBrief
+        : this.state.companyDetails.companyBrief,
+
+      sectorName: this.state.sectorName
+        ? this.state.sectorName
+        : this.state.companyDetails.sectorName,
+
+      turnover: this.state.turnover
+        ? this.state.turnover
+        : this.state.companyDetails.turnover,
+      companyId: this.state.companyId,
     };
-    DataService.addACompany(data)
+    DataService.updateACompany(data)
       .then((response) => {
         if (response.status === 200) this.props.history.push("/AdminDashboard");
       })
       .catch((error) => {
         console.log(error);
-        this.setState({ errorMsg: "Error adding company" });
+        this.setState({ errorMsg: "Error updating company" });
         console.log(this.state.errorMsg);
       });
   }
@@ -125,7 +159,11 @@ export default class AddCompany extends Component {
                 <TextField
                   id="standard-basic"
                   label="Company Name"
-                  value={this.state.companyName ? this.state.companyName : ""}
+                  value={
+                    this.state.companyName
+                      ? this.state.companyName
+                      : this.state.companyDetails.companyName
+                  }
                   onChange={this.handleCompanyChange}
                 />
               </div>
@@ -133,7 +171,11 @@ export default class AddCompany extends Component {
                 <TextField
                   id="standard-basic"
                   label="CEO"
-                  value={this.state.ceo ? this.state.ceo : ""}
+                  value={
+                    this.state.ceo
+                      ? this.state.ceo
+                      : this.state.companyDetails.ceo
+                  }
                   onChange={this.handleCeoChange}
                 />
               </div>
@@ -144,7 +186,7 @@ export default class AddCompany extends Component {
                   value={
                     this.state.boardOfDirectors
                       ? this.state.boardOfDirectors
-                      : ""
+                      : this.state.companyDetails.boardOfDirectors
                   }
                   onChange={this.handleBoardOfDirectorsChange}
                 />
@@ -153,17 +195,15 @@ export default class AddCompany extends Component {
                 <TextField
                   id="standard-basic"
                   label="Company Brief"
-                  value={this.state.companyBrief ? this.state.companyBrief : ""}
+                  value={
+                    this.state.companyBrief
+                      ? this.state.companyBrief
+                      : this.state.companyDetails.companyBrief
+                  }
                   onChange={this.handleCompanyBriefChange}
                 />
               </div>
               <div>
-                {/* <TextField
-                  id="standard-basic"
-                  label="Sector Name"
-                  value={this.state.sectorName ? this.state.sectorName : ""}
-                  onChange={this.handleSectorNameChange}
-                /> */}
                 <InputLabel id="demo-simple-select-label">
                   Select Sector
                 </InputLabel>
@@ -171,7 +211,7 @@ export default class AddCompany extends Component {
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
                   // name="Sector"
-                  value={this.state.sectorName}
+                  value={this.state.companyDetails.sectorName}
                   onChange={this.handleSectorNameChange}
                 >
                   {this.state.sectorsList.map((item) => (
@@ -180,12 +220,27 @@ export default class AddCompany extends Component {
                     </MenuItem>
                   ))}
                 </Select>
+
+                {/* <TextField
+                  id="standard-basic"
+                  label="Sector Name"
+                  value={
+                    this.state.sectorName
+                      ? this.state.sectorName
+                      : this.state.companyDetails.sectorName
+                  }
+                  onChange={this.handleSectorNameChange}
+                /> */}
               </div>
               <div>
                 <TextField
                   id="standard-basic"
                   label="Turnover"
-                  value={this.state.turnover ? this.state.turnover : ""}
+                  value={
+                    this.state.turnover
+                      ? this.state.turnover
+                      : this.state.companyDetails.turnover
+                  }
                   onChange={this.handleTurnoverChange}
                 />
               </div>
@@ -194,9 +249,9 @@ export default class AddCompany extends Component {
                   variant="outlined"
                   size="large"
                   color="primary"
-                  onClick={() => this.addThisCompany()}
+                  onClick={() => this.updateThisCompany()}
                 >
-                  Add Company
+                  Update
                 </Button>
               </div>
             </form>

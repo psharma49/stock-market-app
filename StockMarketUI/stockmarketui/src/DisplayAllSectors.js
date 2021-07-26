@@ -35,29 +35,28 @@ const useStyles = withStyles({
   },
 });
 
-export default class DisplayAllCompanies extends Component {
+export default class displayAllSectors extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      companiesList: [],
+      sectorsList: [],
       errorMsg: "",
-      companyDetails: [],
     };
   }
   componentDidMount() {
-    this.getAllCompanies();
+    this.getAllSectors();
   }
 
-  getAllCompanies() {
-    DataService.retrieveCompanyList()
+  getAllSectors() {
+    DataService.retriveSectorList()
       .then((response) => {
         console.log(response);
-        this.setState({ companiesList: response.data });
+        this.setState({ sectorsList: response.data });
       })
       .catch((error) => {
         console.log(error);
-        this.setState({ errorMsg: "Error retrieving company list" });
+        this.setState({ errorMsg: "Error retrieving sector list" });
       });
   }
 
@@ -70,46 +69,38 @@ export default class DisplayAllCompanies extends Component {
           <Table aria-label="customized table">
             <TableHead>
               <TableRow>
-                <StyledTableCell>Company Name</StyledTableCell>
-                <StyledTableCell>CEO</StyledTableCell>
+                <StyledTableCell>Sector Name</StyledTableCell>
                 <StyledTableCell>Brief&nbsp;</StyledTableCell>
-                <StyledTableCell>Sector Name&nbsp;</StyledTableCell>
-                <StyledTableCell align="right">
-                  Get full details&nbsp;
-                </StyledTableCell>
-                <StyledTableCell align="right">
-                  Update Company&nbsp;
-                </StyledTableCell>
+                <StyledTableCell>Get All Companies&nbsp;</StyledTableCell>
+                <StyledTableCell>Edit Sector&nbsp;</StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {this.state.companiesList.map((row) => (
-                <StyledTableRow key={row.companyId}>
+              {this.state.sectorsList.map((row) => (
+                <StyledTableRow key={row.id}>
                   <StyledTableCell component="th" scope="row">
-                    {row.companyName}
+                    {row.sectorName}
                   </StyledTableCell>
-                  <StyledTableCell>{row.ceo}</StyledTableCell>
-                  <StyledTableCell>{row.companyBrief}</StyledTableCell>
-                  <StyledTableCell>{row.sectorName}</StyledTableCell>
-                  <StyledTableCell align="right">
+                  <StyledTableCell>{row.brief}</StyledTableCell>
+                  <StyledTableCell>
                     <label>
                       <Button
                         variant="outlined"
                         size="small"
                         color="primary"
-                        href={`http://localhost:3000/individualCompany${row.companyId}`}
+                        href={`http://localhost:3000/getAllCompaniesInThisSector${row.id}`}
                       >
-                        Full details
+                        Companies
                       </Button>
                     </label>
                   </StyledTableCell>
-                  <StyledTableCell align="right">
+                  <StyledTableCell>
                     <label>
                       <Button
                         variant="outlined"
                         size="small"
                         color="primary"
-                        href={`http://localhost:3000/updateCompany${row.companyId}`}
+                        href={`http://localhost:3000/updateSector${row.id}`}
                       >
                         Edit
                       </Button>

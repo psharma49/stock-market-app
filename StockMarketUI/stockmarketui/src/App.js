@@ -13,6 +13,19 @@ import ExchangeView from "./ExchangeView";
 import DisplayAllStockExchanges from "./DisplayAllStockExchanges";
 import CompaniesInStockExchange from "./CompaniesInStockExchange";
 import AddStockExchange from "./AddStockExchange";
+import SectorView from "./SectorView";
+import CompaniesInSector from "./CompaniesInSector";
+import DisplayAllSectors from "./DisplayAllSectors";
+import AddSector from "./AddSector";
+import SheetJSApp from "./SheetJSApp";
+import UpdateCompany from "./UpdateCompany";
+import UpdateExchange from "./UpdateExchange";
+import UpdateSector from "./UpdateSector";
+import AddIPO from "./AddIPO";
+import UserDashboard from "./UserDashboard";
+import fusion from "./fusion";
+import CompanyCharts from "./CompanyCharts";
+import DisplayAllIPOs from "./DisplayAllIPOs";
 
 function App() {
   return (
@@ -29,6 +42,7 @@ function App() {
             path="/displayAllCompanies"
             component={DisplayAllCompanies}
           />
+          <Route exact path="/getAllIPOs" component={DisplayAllIPOs} />
           <Route
             exact
             path="/individualCompany:companyId"
@@ -38,6 +52,11 @@ function App() {
             exact
             path="/getAllCompaniesInThisExchange:id"
             component={CompaniesInStockExchange}
+          />
+          <Route
+            exact
+            path="/getAllCompaniesInThisSector:id"
+            component={CompaniesInSector}
           />
           <Route path="/addCompany" component={AddCompany} />
           <Route path="/addStockExchange" component={AddStockExchange} />
@@ -50,6 +69,17 @@ function App() {
             path="/displayAllStockExchanges"
             component={DisplayAllStockExchanges}
           />
+          <Route path="/SectorView" component={SectorView} />
+          <Route path="/displayAllSectors" component={DisplayAllSectors} />
+
+          <Route path="/addNewSector" component={AddSector} />
+          <Route path="/ImportExcel" component={SheetJSApp} />
+          <Route path="/updateCompany:companyId" component={UpdateCompany} />
+          <Route path="/updateStockExchange:id" component={UpdateExchange} />
+          <Route path="/addIPO:companyId" component={AddIPO} />
+          <Route path="/updateSector:id" component={UpdateSector} />
+          <Route path="/UserDashboard" component={UserDashboard} />
+          <Route path="/companyCharts" component={CompanyCharts} />
           {/* <AuthenticatedRoute
             exact
             path="/HeaderComponent"

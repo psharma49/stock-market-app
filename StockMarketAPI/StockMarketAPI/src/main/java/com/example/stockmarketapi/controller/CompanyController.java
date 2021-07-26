@@ -68,9 +68,10 @@ public class CompanyController {
 	
 	
 	@RequestMapping(value = "/updateNewCompany", method = RequestMethod.POST)
-	public void updateStockExchange(@RequestBody Company company)
+	public ResponseEntity<Void> updateStockExchange(@RequestBody Company company)
 	{
 		companyService.updateNewCompany(company);
+		return ResponseEntity.status(HttpStatus.OK).build();
 	}
 	
 	

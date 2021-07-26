@@ -22,7 +22,7 @@ public class IpoDetails {
 	private Long id;
 	
 	@OneToOne(fetch = FetchType.LAZY)
-	@JsonIgnore
+//	@JsonIgnore
 	private Company company;
 	
     @ManyToMany

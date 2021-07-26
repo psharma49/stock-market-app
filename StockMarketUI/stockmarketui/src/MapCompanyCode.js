@@ -24,6 +24,11 @@ export default class MapCompanyCode extends Component {
       companyCode: "",
       errorMsg: "",
     };
+    this.handleCompanyNameChange = this.handleCompanyNameChange.bind(this);
+    this.handleStockExchangeNameChange =
+      this.handleStockExchangeNameChange.bind(this);
+    this.handleCompanyCodeChange = this.handleCompanyCodeChange.bind(this);
+    this.mapCompanyCode = this.mapCompanyCode.bind(this);
   }
 
   handleCompanyNameChange(e) {

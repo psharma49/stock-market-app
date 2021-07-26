@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import { Button } from "@material-ui/core";
 
-export default class AdminDashboard extends Component {
+export default class UserDashboard extends Component {
   constructor(props) {
     super(props);
 
     this.state = {};
   }
-  // ontoCompanyView() {
-  //   this.props.history.push("/CompanyView");
-  // }
   doLogout() {}
 
   render() {
@@ -19,21 +16,15 @@ export default class AdminDashboard extends Component {
           <nav class="navbar">
             <ul>
               <li>
-                <a href="http://localhost:3000/ImportExcel">Import Data</a>
+                <a href="http://localhost:3000/IPOs">IPOs</a>
               </li>
               <li>
-                <a href="http://localhost:3000/CompanyView">Manage Companies</a>
-              </li>
-              <li>
-                <a href="http://localhost:3000/ExchangeView">
-                  Manage Exchanges
+                <a href="http://localhost:3000/companyCharts">
+                  Compare Company
                 </a>
               </li>
               <li>
-                <a href="http://localhost:3000/SectorView">Sector</a>
-              </li>
-              <li>
-                <a href="http://localhost:3000/getAllIPOs">IPO Details</a>
+                <a href="http://localhost:3000/sectorCharts">Compare Sectors</a>
               </li>
               <div class="search">
                 <Button

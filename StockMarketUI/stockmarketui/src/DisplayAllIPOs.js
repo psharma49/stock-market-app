@@ -35,29 +35,27 @@ const useStyles = withStyles({
   },
 });
 
-export default class DisplayAllCompanies extends Component {
+export default class DisplayAllIPOs extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      companiesList: [],
-      errorMsg: "",
-      companyDetails: [],
+      IPOsList: [],
     };
   }
   componentDidMount() {
-    this.getAllCompanies();
+    this.getAllIPOs();
   }
 
-  getAllCompanies() {
-    DataService.retrieveCompanyList()
+  getAllIPOs() {
+    DataService.retriveIPOsList()
       .then((response) => {
         console.log(response);
-        this.setState({ companiesList: response.data });
+        this.setState({ IPOsList: response.data });
       })
       .catch((error) => {
         console.log(error);
-        this.setState({ errorMsg: "Error retrieving company list" });
+        this.setState({ errorMsg: "Error retrieving stock exchange list" });
       });
   }
 
@@ -71,45 +69,30 @@ export default class DisplayAllCompanies extends Component {
             <TableHead>
               <TableRow>
                 <StyledTableCell>Company Name</StyledTableCell>
-                <StyledTableCell>CEO</StyledTableCell>
-                <StyledTableCell>Brief&nbsp;</StyledTableCell>
-                <StyledTableCell>Sector Name&nbsp;</StyledTableCell>
-                <StyledTableCell align="right">
-                  Get full details&nbsp;
-                </StyledTableCell>
-                <StyledTableCell align="right">
-                  Update Company&nbsp;
-                </StyledTableCell>
+                <StyledTableCell>Open Date Time;</StyledTableCell>
+                <StyledTableCell>Price Per Share&nbsp;</StyledTableCell>
+                <StyledTableCell>Total Share&nbsp;</StyledTableCell>
+                <StyledTableCell>Remarks&nbsp;</StyledTableCell>
+                <StyledTableCell>Edit IPO&nbsp;</StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {this.state.companiesList.map((row) => (
-                <StyledTableRow key={row.companyId}>
+              {this.state.IPOsList.map((row) => (
+                <StyledTableRow key={row.id}>
                   <StyledTableCell component="th" scope="row">
-                    {row.companyName}
+                    {row.company.companyName}
                   </StyledTableCell>
-                  <StyledTableCell>{row.ceo}</StyledTableCell>
-                  <StyledTableCell>{row.companyBrief}</StyledTableCell>
-                  <StyledTableCell>{row.sectorName}</StyledTableCell>
-                  <StyledTableCell align="right">
+                  <StyledTableCell>{row.openDateTime}</StyledTableCell>
+                  <StyledTableCell>{row.pricePerShare}</StyledTableCell>
+                  <StyledTableCell>{row.totalShares}</StyledTableCell>
+                  <StyledTableCell>{row.remarks}</StyledTableCell>
+                  <StyledTableCell>
                     <label>
                       <Button
                         variant="outlined"
                         size="small"
                         color="primary"
-                        href={`http://localhost:3000/individualCompany${row.companyId}`}
-                      >
-                        Full details
-                      </Button>
-                    </label>
-                  </StyledTableCell>
-                  <StyledTableCell align="right">
-                    <label>
-                      <Button
-                        variant="outlined"
-                        size="small"
-                        color="primary"
-                        href={`http://localhost:3000/updateCompany${row.companyId}`}
+                        href={`http://localhost:3000/getAllCompaniesInThisExchange${row.id}`}
                       >
                         Edit
                       </Button>
