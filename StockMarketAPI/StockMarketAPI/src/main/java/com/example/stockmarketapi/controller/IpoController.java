@@ -37,12 +37,28 @@ public class IpoController {
 		return ipoDetailsService.getIpoById(id);
 	}
 	
+	@RequestMapping(value = "/getCompanyNameByIpoId/{id}", method = RequestMethod.GET)
+	public String getCompanyNameByIpoId(@PathVariable ("id") Long id)
+	{
+		return ipoDetailsService.getCompanyNameByIpoId(id);
+		
+	}
+	
 	@RequestMapping(value = "/addIPO/{companyId}", method = RequestMethod.POST)
 	public ResponseEntity<Void> addIPO(@RequestBody IpoDetails ipoDetails, @PathVariable ("companyId") Long companyId)
 	{
 		ipoDetailsService.addIPO(ipoDetails,companyId);
 		return ResponseEntity.status(HttpStatus.OK).build();
 	}
+	
+	
+	@RequestMapping(value = "/updateAnIPO", method = RequestMethod.POST)
+	public ResponseEntity<Void> updateAnIPO(@RequestBody IpoDetails ipoDetails)
+	{
+		ipoDetailsService.updateIpo(ipoDetails);
+		return ResponseEntity.status(HttpStatus.OK).build();
+	}
+	
 	
 	
 }

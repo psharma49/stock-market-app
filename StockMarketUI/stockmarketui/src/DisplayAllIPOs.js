@@ -69,9 +69,9 @@ export default class DisplayAllIPOs extends Component {
             <TableHead>
               <TableRow>
                 <StyledTableCell>Company Name</StyledTableCell>
-                <StyledTableCell>Open Date Time;</StyledTableCell>
+                <StyledTableCell>Open Date Time</StyledTableCell>
                 <StyledTableCell>Price Per Share&nbsp;</StyledTableCell>
-                <StyledTableCell>Total Share&nbsp;</StyledTableCell>
+                <StyledTableCell>Total Shares&nbsp;</StyledTableCell>
                 <StyledTableCell>Remarks&nbsp;</StyledTableCell>
                 <StyledTableCell>Edit IPO&nbsp;</StyledTableCell>
               </TableRow>
@@ -92,7 +92,7 @@ export default class DisplayAllIPOs extends Component {
                         variant="outlined"
                         size="small"
                         color="primary"
-                        href={`http://localhost:3000/getAllCompaniesInThisExchange${row.id}`}
+                        href={`http://localhost:3000/updateIPO${row.id}`}
                       >
                         Edit
                       </Button>

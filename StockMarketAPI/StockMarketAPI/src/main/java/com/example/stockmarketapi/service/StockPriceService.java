@@ -62,14 +62,13 @@ public class StockPriceService {
 		
 	}
 
-	public List<StockPrice> findCompanyStockPriceDetails(Long companyId, Date startDate, Date endDate,String stockExchangeName) {
+	public List<StockPrice> findCompanyStockPriceDetails(String companyName, Date startDate, Date endDate,String stockExchangeName) {
 		List<StockPrice> stockPriceList = stockPriceRepository.findByDateeBetween(startDate, endDate);
 		List<StockPrice> stockPriceFinalList = new ArrayList<> ();
 		for(StockPrice x: stockPriceList)
 		{
-			if(x.getCompany().getId()==companyId  && x.getExchangeName()==stockExchangeName)
+			if(x.getCompany().getCompanyName().equals(companyName) && x.getExchangeName().equals(stockExchangeName))
 			{
-				System.out.println(stockExchangeName);
 				stockPriceFinalList.add(x);
 			}
 		}

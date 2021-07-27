@@ -17,6 +17,9 @@ class DataService {
   updateAStockExchange(data) {
     return axios.post("http://localhost:8080/updateStockExchange", data);
   }
+  updateAnIPO(data) {
+    return axios.post("http://localhost:8080/updateAnIPO", data);
+  }
   addAStockExchange(data) {
     return axios.post("http://localhost:8080/addStockExchange", data);
   }
@@ -69,9 +72,26 @@ class DataService {
   retriveSectorDetails(id) {
     return axios.get(`http://localhost:8080/getSectorById/${id}`);
   }
+  retrieveIPODetailsOfCompany(id) {
+    return axios.get(`http://localhost:8080/getIpoById/${id}`);
+  }
 
+  retrieveCompanyNameByIpoId(id) {
+    return axios.get(`http://localhost:8080/getCompanyNameByIpoId/${id}`);
+  }
   mapThisCompanyCode(data) {
     return axios.post("http://localhost:8080/mapCompanyCode", data);
+  }
+
+  getStockPriceDetailsOfCompaniesBetweenDates(
+    companyName,
+    startDate,
+    endDate,
+    stockExchangeName
+  ) {
+    return axios.get(
+      `http://localhost:8080/getCompanyStockPrice/${companyName}/${startDate}/${endDate}/${stockExchangeName}`
+    );
   }
 }
 export default new DataService();

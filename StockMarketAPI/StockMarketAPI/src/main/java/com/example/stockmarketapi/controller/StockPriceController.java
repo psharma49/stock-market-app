@@ -23,13 +23,13 @@ public class StockPriceController {
 	@Autowired
 	private StockPriceService stockPriceService;
 	
-	@GetMapping("/getCompanyStockPrice/{companyId}/{startDate}/{endDate}/{stockExchangeName}")
-	public List<StockPrice> findCompanyStockPriceDetails(@PathVariable ("companyId") Long companyId,
+	@GetMapping("/getCompanyStockPrice/{companyName}/{startDate}/{endDate}/{stockExchangeName}")
+	public List<StockPrice> findCompanyStockPriceDetails(@PathVariable ("companyName") String companyName,
 			@PathVariable ("startDate") Date startDate,
 			@PathVariable ("endDate") Date endDate,
 			@PathVariable ("stockExchangeName") String stockExchangeName){
 		
-		return stockPriceService.findCompanyStockPriceDetails(companyId, startDate, endDate,stockExchangeName);
+		return stockPriceService.findCompanyStockPriceDetails(companyName, startDate, endDate,stockExchangeName);
 	}
 
 }

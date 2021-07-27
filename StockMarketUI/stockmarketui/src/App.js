@@ -26,6 +26,8 @@ import UserDashboard from "./UserDashboard";
 import fusion from "./fusion";
 import CompanyCharts from "./CompanyCharts";
 import DisplayAllIPOs from "./DisplayAllIPOs";
+import UpdateIPO from "./UpdateIPO";
+import CompareCompany from "./CompareCompany";
 
 function App() {
   return (
@@ -79,7 +81,8 @@ function App() {
           <Route path="/addIPO:companyId" component={AddIPO} />
           <Route path="/updateSector:id" component={UpdateSector} />
           <Route path="/UserDashboard" component={UserDashboard} />
-          <Route path="/companyCharts" component={CompanyCharts} />
+          <Route path="/updateIPO:id" component={UpdateIPO} />
+          <Route path="/CompareCompany" component={CompareCompany} />
           {/* <AuthenticatedRoute
             exact
             path="/HeaderComponent"

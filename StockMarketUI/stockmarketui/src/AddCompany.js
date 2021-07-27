@@ -158,12 +158,6 @@ export default class AddCompany extends Component {
                 />
               </div>
               <div>
-                {/* <TextField
-                  id="standard-basic"
-                  label="Sector Name"
-                  value={this.state.sectorName ? this.state.sectorName : ""}
-                  onChange={this.handleSectorNameChange}
-                /> */}
                 <InputLabel id="demo-simple-select-label">
                   Select Sector
                 </InputLabel>

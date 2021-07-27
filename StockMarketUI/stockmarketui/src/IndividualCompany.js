@@ -42,7 +42,6 @@ export default class IndividualCompany extends Component {
     this.state = {
       stockExchangeListOfCompany: [],
       companyDetails: [],
-      cId: this.props.match.params.companyId,
     };
 
     this.getCompanyDetails = this.getCompanyDetails.bind(this);

@@ -19,7 +19,7 @@ export default class UserDashboard extends Component {
                 <a href="http://localhost:3000/IPOs">IPOs</a>
               </li>
               <li>
-                <a href="http://localhost:3000/companyCharts">
+                <a href="http://localhost:3000/CompareCompany">
                   Compare Company
                 </a>
               </li>

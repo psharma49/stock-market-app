@@ -112,7 +112,7 @@ export default class AddIPO extends Component {
               </div>
               <TextField
                 id="datetime-local"
-                label="Birthday"
+                label="Open date"
                 type="datetime-local"
                 defaultValue="2017-05-24T10:30"
                 onChange={this.handleDateChange}

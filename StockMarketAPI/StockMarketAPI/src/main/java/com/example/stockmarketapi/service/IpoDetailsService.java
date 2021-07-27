@@ -41,6 +41,23 @@ public class IpoDetailsService {
 		ipoDetailsRepository.save(ipoDetails);
 		
 	}
+
+
+	public String getCompanyNameByIpoId(Long id) {
+		IpoDetails ipoDetails = ipoDetailsRepository.findById(id).get();
+		return ipoDetails.getCompany().getCompanyName();
+	}
+
+
+	public void updateIpo(IpoDetails ipoDetails) {
+		IpoDetails ipoDet = ipoDetailsRepository.findById(ipoDetails.getId()).get();
+		ipoDet.setOpenDateTime(ipoDetails.getOpenDateTime());
+		ipoDet.setPricePerShare(ipoDetails.getPricePerShare());
+		ipoDet.setRemarks(ipoDetails.getRemarks());
+		ipoDet.setTotalShares(ipoDetails.getTotalShares());
+		ipoDetailsRepository.save(ipoDet);
+		
+	}
 	
 	
 
