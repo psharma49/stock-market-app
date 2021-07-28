@@ -21,22 +21,11 @@ export default class SectorView extends Component {
     return (
       <div>
         <AdminDashboard />
-        {/* <div class="search">
-          <input
-            type="text"
-            name="search"
-            id="search"
-            placeholder="Search sector"
-          />
-          <Button variant="contained" size="small" color="primary">
-            Search
-          </Button>
-        </div> */}
         <div className="app">
           <div className="container">
             <div className="BVUpload">
               <div className="screentext">
-                <label>Manage Sector</label>
+                <label className="sectorLabel">Manage Sector</label>
               </div>
               <div className="upload">
                 <button className="btnBV" onClick={() => this.getSectorList()}>

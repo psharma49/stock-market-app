@@ -16,7 +16,6 @@ const dataSource = {
       plot: [
         {
           value: "Share Price",
-          //   connectnulldata: true
         },
       ],
       title: "Share Price",

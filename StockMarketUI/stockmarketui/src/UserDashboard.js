@@ -21,7 +21,9 @@ export default class UserDashboard extends Component {
                 <a href="http://localhost:3000/IPOs">IPOs</a>
               </li>
               <li>
-                <a href="http://localhost:3000/C">Compare Company</a>
+                <a href="http://localhost:3000/CompareCompany">
+                  Compare Company
+                </a>
               </li>
               <li>
                 <a href="http://localhost:3000/sectorCharts">Compare Sectors</a>

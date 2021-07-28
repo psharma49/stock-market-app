@@ -1151,13 +1151,14 @@ html,
   border: 3px solid #000;
   position: relative;
   top: 75px;
+
   padding-left: 30px;
   padding-right: 30px;
 }
 
 .form {
   position: relative;
-  left: 65px;
+  left: 35px;
   top: 20px;
   padding-left: 30px;
   padding-right: 30px;
@@ -1166,7 +1167,7 @@ html,
 .addCompanyButton {
   position: relative;
   top: 20px;
-  left: 55px;
+  left: 25px;
 }
 
 .addExcel {
@@ -1182,11 +1183,11 @@ html,
 .uploadExcelButton {
   position: relative;
   top: 130px;
-  left: 10px;
+  right: 15px;
 }
 .uploadControl {
   position: relative;
-  right: 30px;
+  right: 70px;
   top: 60px;
 }
 .uploadExcelSuccessful {
@@ -1214,4 +1215,104 @@ html,
   padding: 8px;
   font-family: Arial;
   font-size: 25px;
+}
+
+.WelcomeLabel {
+  color: Black;
+  position: relative;
+  font-size: 25px;
+  font-family: Arial;
+  left: 415px;
+  top: 70px;
+}
+
+.uploadExcelStock {
+  color: Black;
+  position: relative;
+  font-size: 20px;
+  font-family: Arial;
+  right: 50px;
+}
+
+.addCompanyLabel {
+  color: Black;
+  position: relative;
+  font-size: 30px;
+  left: 530px;
+  top: 50px;
+}
+
+.mapCompanyButton {
+  position: relative;
+  top: 62px;
+  left: 60px;
+}
+
+.formMap {
+  position: relative;
+  left: 35px;
+  top: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.mapCompanyLabel {
+  color: Black;
+  position: relative;
+  font-size: 30px;
+  left: 400px;
+  top: 50px;
+}
+
+.addStockExchangeButton {
+  position: relative;
+  top: 50px;
+  right: 15px;
+}
+
+.stockExLabel {
+  color: Black;
+  position: relative;
+  font-size: 30px;
+  left: 500px;
+  top: 50px;
+}
+
+.editCompany {
+  position: relative;
+  left: 680px;
+}
+.addIPOBtn {
+  position: relative;
+  left: 350px;
+}
+.buttonsEditAndIPO {
+  padding-top: 15px;
+}
+
+.sectorLabel {
+  color: Black;
+  position: relative;
+  font-size: 30px;
+}
+
+.addNewSectorLabel {
+  color: Black;
+  position: relative;
+  font-size: 30px;
+  left: 525px;
+  top: 50px;
+}
+
+.sectorForm {
+  position: relative;
+  left: 35px;
+  top: 70px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.addSectorButton {
+  position: relative;
+  top: 80px;
 }

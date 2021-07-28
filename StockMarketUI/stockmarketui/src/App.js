@@ -104,7 +104,7 @@ function App() {
             path="/updateSector:id"
             component={UpdateSector}
           />
-          <AuthenticatedRoute path="/UserDashboard" component={UserDashboard} />
+          <Route path="/UserDashboard" component={UserDashboard} />
           <AuthenticatedRoute path="/updateIPO:id" component={UpdateIPO} />
           <AuthenticatedRoute
             path="/CompareCompany"

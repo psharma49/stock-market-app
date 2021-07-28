@@ -122,6 +122,9 @@ export default class AddCompany extends Component {
         {isUserLoggedin && (
           <div>
             <AdminDashboard />
+            <div>
+              <label className="addCompanyLabel">Add Company</label>
+            </div>
             <div className="addCompany">
               <div className="form">
                 <form noValidate autoComplete="off">

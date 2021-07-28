@@ -60,8 +60,11 @@ export default class AddSector extends Component {
     return (
       <div>
         <AdminDashboard />
+        <div>
+          <label className="addNewSectorLabel">Add New Sector</label>
+        </div>
         <div className="addCompany">
-          <div className="form">
+          <div className="sectorForm">
             <form noValidate autoComplete="off">
               <div>
                 <TextField
@@ -84,6 +87,7 @@ export default class AddSector extends Component {
                   variant="outlined"
                   size="large"
                   color="primary"
+                  className="addSectorButton"
                   onClick={() => this.addThisSector()}
                 >
                   Add Sector

@@ -79,6 +79,9 @@ export default class AddStockExchange extends Component {
     return (
       <div>
         <AdminDashboard />
+        <div>
+          <label className="stockExLabel"> Add Stock Exchange</label>
+        </div>
         <div className="addCompany">
           <div className="form">
             <form noValidate autoComplete="off">
@@ -120,7 +123,7 @@ export default class AddStockExchange extends Component {
                   onChange={this.handleRemarksChange}
                 />
               </div>
-              <div className="addCompanyButton">
+              <div className="addStockExchangeButton">
                 <Button
                   variant="outlined"
                   size="large"

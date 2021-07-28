@@ -156,7 +156,9 @@ class DataInput extends React.Component {
           </div>
           <div className="addExcel">
             <div className="form">
-              <label htmlFor="file">Upload Stock Price</label>
+              <label className="uploadExcelStock" htmlFor="file">
+                Upload Stock Price
+              </label>
               <input
                 type="file"
                 className="uploadControl"

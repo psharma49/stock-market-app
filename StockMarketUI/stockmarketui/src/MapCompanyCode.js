@@ -71,8 +71,13 @@ export default class MapCompanyCode extends Component {
     return (
       <div>
         <AdminDashboard />
+        <div>
+          <label className="mapCompanyLabel">
+            Map Company with Stock Exchange
+          </label>
+        </div>
         <div className="addCompany">
-          <div className="form">
+          <div className="formMap">
             <form noValidate autoComplete="off">
               <div>
                 <TextField
@@ -102,7 +107,7 @@ export default class MapCompanyCode extends Component {
                   onChange={this.handleCompanyCodeChange}
                 />
               </div>
-              <div className="addSectorButton">
+              <div className="mapCompanyButton">
                 <Button
                   variant="outlined"
                   size="large"

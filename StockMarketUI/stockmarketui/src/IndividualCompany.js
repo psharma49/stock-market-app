@@ -160,11 +160,12 @@ export default class IndividualCompany extends Component {
             </TableBody>
           </Table>
         </TableContainer>
-        <div>
+        <div className="buttonsEditAndIPO">
           <Button
             variant="outlined"
             size="large"
             color="primary"
+            className="editCompany"
             href={`http://localhost:3000/updateCompany${this.props.match.params.companyId}`}
           >
             Edit Details
@@ -173,6 +174,7 @@ export default class IndividualCompany extends Component {
             variant="outlined"
             size="large"
             color="primary"
+            className="addIPOBtn"
             href={`http://localhost:3000/addIPO${this.props.match.params.companyId}`}
           >
             Add IPO

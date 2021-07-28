@@ -66,57 +66,64 @@ export default class SignUp extends Component {
 
   render() {
     return (
-      <div className="app">
-        <div className="container">
-          <div className="loginForm">
-            Sign Up
-            <div className="radioButton">
-              <label>
-                <input
-                  type="radio"
-                  value="Admin"
-                  name="rights"
-                  checked={this.state.radioButtonValue === "Admin"}
-                  onChange={this.onValueChangeAdmin}
-                />
-                Admin
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  value="User"
-                  name="rights"
-                  checked={this.state.radioButtonValue === "User"}
-                  onChange={this.onValueChangeUser}
-                />
-                User
-              </label>
+      <div>
+        <div>
+          <label className="WelcomeLabel">
+            Welcome to Stock Market Charting App
+          </label>
+        </div>
+        <div className="app">
+          <div className="container">
+            <div className="loginForm">
+              Sign Up
+              <div className="radioButton">
+                <label>
+                  <input
+                    type="radio"
+                    value="Admin"
+                    name="rights"
+                    checked={this.state.radioButtonValue === "Admin"}
+                    onChange={this.onValueChangeAdmin}
+                  />
+                  Admin
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    value="User"
+                    name="rights"
+                    checked={this.state.radioButtonValue === "User"}
+                    onChange={this.onValueChangeUser}
+                  />
+                  User
+                </label>
+              </div>
+              <InputField
+                type="text"
+                placeholder="Name"
+                value={this.state.name ? this.state.name : ""}
+                onChange={(val) => this.setInputValue("name", val)}
+              />
+              <InputField
+                type="email"
+                placeholder="Email"
+                value={this.state.email ? this.state.email : ""}
+                onChange={(val) => this.setInputValue("email", val)}
+              />
+              <InputField
+                type="Password"
+                placeholder="Password"
+                value={this.state.password ? this.state.password : ""}
+                onChange={(val) => this.setInputValue("password", val)}
+              />
+              <SubmitButton
+                text="Sign Up"
+                disabled={this.state.buttonDisabled}
+                onClick={() => this.registerUser()}
+              />
             </div>
-            <InputField
-              type="text"
-              placeholder="Name"
-              value={this.state.name ? this.state.name : ""}
-              onChange={(val) => this.setInputValue("name", val)}
-            />
-            <InputField
-              type="email"
-              placeholder="Email"
-              value={this.state.email ? this.state.email : ""}
-              onChange={(val) => this.setInputValue("email", val)}
-            />
-            <InputField
-              type="Password"
-              placeholder="Password"
-              value={this.state.password ? this.state.password : ""}
-              onChange={(val) => this.setInputValue("password", val)}
-            />
-            <SubmitButton
-              text="Sign Up"
-              disabled={this.state.buttonDisabled}
-              onClick={() => this.registerUser()}
-            />
+            {/* {this.loadLoginError()} */}
           </div>
-          {/* {this.loadLoginError()} */}
         </div>
       </div>
     );

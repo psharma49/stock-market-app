@@ -86,9 +86,7 @@ export default class Login extends Component {
           if (res.status === 200) {
             AuthenticationService.registerSuccessfulLogin(this.state.username);
             this.props.history.push("/AdminDashboard");
-
             this.setState({ errorMsgLogin: "" });
-            // console.log(res.admin);
           } else {
             this.resetForm();
             this.setState({ errorMsgLogin: "Invalid username or password" });
@@ -107,35 +105,41 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="app">
-        <div>Welcome to Stock Market Charting App</div>
-        <div className="container">
-          <div className="loginForm">
-            <div className="loginName">Log in</div>
-            <InputField
-              type="text"
-              placeholder="Username"
-              value={this.state.username ? this.state.username : ""}
-              onChange={(val) => this.setInputValue("username", val)}
-            />
-            <InputField
-              type="Password"
-              placeholder="Password"
-              value={this.state.password ? this.state.password : ""}
-              onChange={(val) => this.setInputValue("password", val)}
-            />
-            <SubmitButton
-              text="Login"
-              disabled={this.state.buttonDisabled}
-              onClick={() => this.doLogin()}
-            />
-            <SubmitButton
-              text="Signup"
-              disabled={this.state.buttonDisabled}
-              onClick={() => this.ontoSignUp()}
-            />
+      <div>
+        <div>
+          <label className="WelcomeLabel">
+            Welcome to Stock Market Charting App
+          </label>
+        </div>
+        <div className="app">
+          <div className="container">
+            <div className="loginForm">
+              <div className="loginName">Log in</div>
+              <InputField
+                type="text"
+                placeholder="Username"
+                value={this.state.username ? this.state.username : ""}
+                onChange={(val) => this.setInputValue("username", val)}
+              />
+              <InputField
+                type="Password"
+                placeholder="Password"
+                value={this.state.password ? this.state.password : ""}
+                onChange={(val) => this.setInputValue("password", val)}
+              />
+              <SubmitButton
+                text="Login"
+                disabled={this.state.buttonDisabled}
+                onClick={() => this.doLogin()}
+              />
+              <SubmitButton
+                text="Signup"
+                disabled={this.state.buttonDisabled}
+                onClick={() => this.ontoSignUp()}
+              />
+            </div>
+            {this.loadLoginError()}
           </div>
-          {this.loadLoginError()}
         </div>
       </div>
     );
