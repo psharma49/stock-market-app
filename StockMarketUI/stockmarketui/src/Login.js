@@ -3,6 +3,7 @@ import InputField from "./InputField";
 import SubmitButton from "./SubmitButton";
 import DataService from "./DataService";
 import AuthenticationService from "./AuthenticationService";
+import UserDashboard from "./UserDashboard";
 
 export default class Login extends Component {
   constructor(props) {
@@ -84,7 +85,11 @@ export default class Login extends Component {
           if (res.status === 200) {
             AuthenticationService.registerSuccessfulLogin(this.state.username);
             this.setState({ errorMsgLogin: "" });
-            this.props.history.push("/AdminDashboard");
+            if (res.admin === true) {
+              this.props.history.push("/AdminDashboard");
+            } else {
+              this.props.history.push("/UserDashboard");
+            }
           } else {
             this.resetForm();
             this.setState({ errorMsgLogin: "Invalid username or password" });

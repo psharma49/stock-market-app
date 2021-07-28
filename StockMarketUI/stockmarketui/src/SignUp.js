@@ -48,13 +48,13 @@ export default class SignUp extends Component {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
-      Admin: this.state.Admin,
+      admin: this.state.Admin,
     };
     DataService.signUpUser(data)
       .then((response) => {
-        if (response.status === 200 && this.state.Admin === true)
+        if (response.status === 200 && this.state.admin === true)
           this.props.history.push("/login");
-        if (response.status === 200 && this.state.Admin === false)
+        if (response.status === 200 && this.state.admin === false)
           this.props.history.push("/login");
       })
       .catch((error) => {

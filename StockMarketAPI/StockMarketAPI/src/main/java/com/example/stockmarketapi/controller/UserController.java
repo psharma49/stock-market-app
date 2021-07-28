@@ -95,22 +95,20 @@ public class UserController {
 		Users usr = new Users();
 		usr = usersRepository.getById(userid);
 		usr.setConfirmed(true);
+		
 		usersRepository.save(usr);
 		return "User confirmed" + usr.getName();
 	}
 	
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ResponseEntity<Void> loginUser(@RequestBody Users user) throws AddressException, MessagingException {
+	public ResponseEntity<Users> loginUser(@RequestBody Users user) throws AddressException, MessagingException {
 		
 		if(userService.checkUser(user))
 		{
-			return ResponseEntity.status(HttpStatus.OK).build();
+			return ResponseEntity.ok(user);
 		}
-		else
-		{
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-		}
+		return ResponseEntity.ok(user);
         
 	}
 	
