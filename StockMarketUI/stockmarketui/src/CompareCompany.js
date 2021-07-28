@@ -22,7 +22,7 @@ export default class CompareCompany extends Component {
       startDate: "",
       endDate: "",
       finalCompaniesSelected: [],
-      getChartsData: [],
+      finalList: [],
       isGraphDisplay: false,
     };
 
@@ -97,6 +97,7 @@ export default class CompareCompany extends Component {
     console.log(this.state.finalCompaniesSelected);
   }
   async getChartsData() {
+    console.log(this.state.finalCompaniesSelected.length);
     for (let i = 0; i < this.state.finalCompaniesSelected.length; i++) {
       await DataService.getStockPriceDetailsOfCompaniesBetweenDates(
         this.state.finalCompaniesSelected[i].companyName,
@@ -105,8 +106,18 @@ export default class CompareCompany extends Component {
         this.state.stockExchangeName
       )
         .then((response) => {
-          console.log(response);
-          this.state.getChartsData.push(response.data);
+          console.log(response.data);
+          let temp2 = response.data;
+          for (let i = 0; i < temp2.length; i++) {
+            let temp = [
+              temp2[i].datee,
+              temp2[i].company.companyName,
+              temp2[i].sharePrice,
+            ];
+
+            this.state.finalList.push(temp);
+            console.log(this.state.finalList);
+          }
         })
         .catch((error) => {
           console.log(error);
@@ -185,11 +196,7 @@ export default class CompareCompany extends Component {
         </div>
         <div id="companyCharts">
           {this.state.isGraphDisplay && (
-            <CompanyCharts
-              getChartsData={this.state.getChartsData}
-              finalCompaniesSelected={this.state.finalCompaniesSelected}
-              stockExchangeName={this.state.stockExchangeName}
-            />
+            <CompanyCharts finalList={this.state.finalList} />
           )}
         </div>
       </div>
