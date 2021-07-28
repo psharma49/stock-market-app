@@ -8,6 +8,7 @@ import DataService from "./DataService";
 import Select from "@material-ui/core/Select";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
+import AuthenticationService from "./AuthenticationService";
 
 const useStyles = withStyles((theme) => ({
   root: {
@@ -115,87 +116,96 @@ export default class AddCompany extends Component {
   }
 
   render() {
+    const isUserLoggedin = AuthenticationService.isUserLoggedin();
     return (
       <div>
-        <AdminDashboard />
-        <div className="addCompany">
-          <div className="form">
-            <form noValidate autoComplete="off">
-              <div>
-                <TextField
-                  id="standard-basic"
-                  label="Company Name"
-                  value={this.state.companyName ? this.state.companyName : ""}
-                  onChange={this.handleCompanyChange}
-                />
+        {isUserLoggedin && (
+          <div>
+            <AdminDashboard />
+            <div className="addCompany">
+              <div className="form">
+                <form noValidate autoComplete="off">
+                  <div>
+                    <TextField
+                      id="standard-basic"
+                      label="Company Name"
+                      value={
+                        this.state.companyName ? this.state.companyName : ""
+                      }
+                      onChange={this.handleCompanyChange}
+                    />
+                  </div>
+                  <div>
+                    <TextField
+                      id="standard-basic"
+                      label="CEO"
+                      value={this.state.ceo ? this.state.ceo : ""}
+                      onChange={this.handleCeoChange}
+                    />
+                  </div>
+                  <div>
+                    <TextField
+                      id="standard-basic"
+                      label="Board of Directors"
+                      value={
+                        this.state.boardOfDirectors
+                          ? this.state.boardOfDirectors
+                          : ""
+                      }
+                      onChange={this.handleBoardOfDirectorsChange}
+                    />
+                  </div>
+                  <div>
+                    <TextField
+                      id="standard-basic"
+                      label="Company Brief"
+                      value={
+                        this.state.companyBrief ? this.state.companyBrief : ""
+                      }
+                      onChange={this.handleCompanyBriefChange}
+                    />
+                  </div>
+                  <div>
+                    <InputLabel id="demo-simple-select-label">
+                      Select Sector
+                    </InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      // name="Sector"
+                      value={this.state.sectorName}
+                      onChange={this.handleSectorNameChange}
+                    >
+                      {this.state.sectorsList.map((item) => (
+                        <MenuItem value={item.sectorName}>
+                          {item.sectorName}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </div>
+                  <div>
+                    <TextField
+                      id="standard-basic"
+                      label="Turnover"
+                      value={this.state.turnover ? this.state.turnover : ""}
+                      onChange={this.handleTurnoverChange}
+                    />
+                  </div>
+                  <div className="addCompanyButton">
+                    <Button
+                      variant="outlined"
+                      size="large"
+                      color="primary"
+                      onClick={() => this.addThisCompany()}
+                    >
+                      Add Company
+                    </Button>
+                  </div>
+                </form>
               </div>
-              <div>
-                <TextField
-                  id="standard-basic"
-                  label="CEO"
-                  value={this.state.ceo ? this.state.ceo : ""}
-                  onChange={this.handleCeoChange}
-                />
-              </div>
-              <div>
-                <TextField
-                  id="standard-basic"
-                  label="Board of Directors"
-                  value={
-                    this.state.boardOfDirectors
-                      ? this.state.boardOfDirectors
-                      : ""
-                  }
-                  onChange={this.handleBoardOfDirectorsChange}
-                />
-              </div>
-              <div>
-                <TextField
-                  id="standard-basic"
-                  label="Company Brief"
-                  value={this.state.companyBrief ? this.state.companyBrief : ""}
-                  onChange={this.handleCompanyBriefChange}
-                />
-              </div>
-              <div>
-                <InputLabel id="demo-simple-select-label">
-                  Select Sector
-                </InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  // name="Sector"
-                  value={this.state.sectorName}
-                  onChange={this.handleSectorNameChange}
-                >
-                  {this.state.sectorsList.map((item) => (
-                    <MenuItem value={item.sectorName}>
-                      {item.sectorName}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </div>
-              <div>
-                <TextField
-                  id="standard-basic"
-                  label="Turnover"
-                  value={this.state.turnover ? this.state.turnover : ""}
-                  onChange={this.handleTurnoverChange}
-                />
-              </div>
-              <div className="addCompanyButton">
-                <Button
-                  variant="outlined"
-                  size="large"
-                  color="primary"
-                  onClick={() => this.addThisCompany()}
-                >
-                  Add Company
-                </Button>
-              </div>
-            </form>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     );
   }

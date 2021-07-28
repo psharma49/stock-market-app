@@ -1,6 +1,9 @@
 import axios from "axios";
 
 class DataService {
+  checkUser(data) {
+    return axios.post("http://localhost:8080/login", data);
+  }
   signUpUser(data) {
     return axios.post("http://localhost:8080/setuserapi", data);
   }

@@ -4,6 +4,7 @@ import { withStyles } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import AdminDashboard from "./AdminDashboard";
 import DataService from "./DataService";
+import AuthenticationService from "./AuthenticationService";
 
 const useStyles = withStyles((theme) => ({
   container: {

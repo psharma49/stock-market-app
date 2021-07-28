@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button } from "@material-ui/core";
+import AuthenticationService from "./AuthenticationService";
 
 export default class AdminDashboard extends Component {
   constructor(props) {
@@ -10,7 +11,10 @@ export default class AdminDashboard extends Component {
   // ontoCompanyView() {
   //   this.props.history.push("/CompanyView");
   // }
-  doLogout() {}
+  doLogout() {
+    AuthenticationService.logout();
+    // this.props.history.push("/login");
+  }
 
   render() {
     return (
@@ -41,6 +45,7 @@ export default class AdminDashboard extends Component {
                   size="small"
                   color="secondary"
                   onClick={() => this.doLogout()}
+                  href="http://localhost:3000/login"
                 >
                   Log out
                 </Button>

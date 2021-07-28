@@ -53,9 +53,9 @@ export default class SignUp extends Component {
     DataService.signUpUser(data)
       .then((response) => {
         if (response.status === 200 && this.state.Admin === true)
-          this.props.history.push("/AdminDashboard");
+          this.props.history.push("/login");
         if (response.status === 200 && this.state.Admin === false)
-          this.props.history.push("/UserDashboard");
+          this.props.history.push("/login");
       })
       .catch((error) => {
         console.log(error);
