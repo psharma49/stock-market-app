@@ -37,6 +37,7 @@ export default class CompanyCharts extends React.Component {
         width: "600",
         height: "400",
         dataSource,
+        series: "Type",
       },
     };
   }
@@ -61,28 +62,6 @@ export default class CompanyCharts extends React.Component {
         type: "number",
       },
     ];
-
-    var monthNames = [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-    ];
-
-    function dateFormat(d) {
-      var t = new Date(d);
-      return (
-        t.getDate() + "-" + monthNames[t.getMonth()] + "-" + t.getFullYear()
-      );
-    }
 
     let data = this.props.finalList;
     console.log("111111111111111111111111111111111111111111");

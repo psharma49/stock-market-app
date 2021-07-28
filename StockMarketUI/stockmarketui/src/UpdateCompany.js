@@ -153,7 +153,7 @@ export default class UpdateCompany extends Component {
       <div>
         <AdminDashboard />
         <div className="addCompany">
-          <div className="form">
+          <div className="updateCompanyForm">
             <form noValidate autoComplete="off">
               <div>
                 <TextField
@@ -165,6 +165,7 @@ export default class UpdateCompany extends Component {
                       : this.state.companyDetails.companyName
                   }
                   onChange={this.handleCompanyChange}
+                  InputLabelProps={{ shrink: true }}
                 />
               </div>
               <div>
@@ -177,6 +178,7 @@ export default class UpdateCompany extends Component {
                       : this.state.companyDetails.ceo
                   }
                   onChange={this.handleCeoChange}
+                  InputLabelProps={{ shrink: true }}
                 />
               </div>
               <div>
@@ -189,6 +191,7 @@ export default class UpdateCompany extends Component {
                       : this.state.companyDetails.boardOfDirectors
                   }
                   onChange={this.handleBoardOfDirectorsChange}
+                  InputLabelProps={{ shrink: true }}
                 />
               </div>
               <div>
@@ -201,6 +204,7 @@ export default class UpdateCompany extends Component {
                       : this.state.companyDetails.companyBrief
                   }
                   onChange={this.handleCompanyBriefChange}
+                  InputLabelProps={{ shrink: true }}
                 />
               </div>
               <div>
@@ -242,6 +246,7 @@ export default class UpdateCompany extends Component {
                       : this.state.companyDetails.turnover
                   }
                   onChange={this.handleTurnoverChange}
+                  InputLabelProps={{ shrink: true }}
                 />
               </div>
               <div className="addCompanyButton">

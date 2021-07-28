@@ -114,7 +114,7 @@ export default class UpdateCompany extends Component {
       <div>
         <AdminDashboard />
         <div className="addCompany">
-          <div className="form">
+          <div className="updateStockExchangeform">
             <form noValidate autoComplete="off">
               <div>
                 <TextField
@@ -126,6 +126,7 @@ export default class UpdateCompany extends Component {
                       : this.state.stockExchangeDetails.stockExchangeName
                   }
                   onChange={this.handleStockExchangeNameChange}
+                  InputLabelProps={{ shrink: true }}
                 />
               </div>
               <div>
@@ -138,6 +139,7 @@ export default class UpdateCompany extends Component {
                       : this.state.stockExchangeDetails.brief
                   }
                   onChange={this.handleBriefChange}
+                  InputLabelProps={{ shrink: true }}
                 />
               </div>
               <div>
@@ -150,6 +152,7 @@ export default class UpdateCompany extends Component {
                       : this.state.stockExchangeDetails.contactAddress
                   }
                   onChange={this.handleContactAddressChange}
+                  InputLabelProps={{ shrink: true }}
                 />
               </div>
               <div>
@@ -162,6 +165,7 @@ export default class UpdateCompany extends Component {
                       : this.state.stockExchangeDetails.remarks
                   }
                   onChange={this.handleRemarksChange}
+                  InputLabelProps={{ shrink: true }}
                 />
               </div>
               <div className="addCompanyButton">
