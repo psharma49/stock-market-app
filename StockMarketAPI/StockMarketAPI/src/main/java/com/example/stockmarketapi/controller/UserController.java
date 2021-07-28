@@ -102,13 +102,16 @@ public class UserController {
 	
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ResponseEntity<Users> loginUser(@RequestBody Users user) throws AddressException, MessagingException {
+	public ResponseEntity<Void> loginUser(@RequestBody Users user) throws AddressException, MessagingException {
 		
 		if(userService.checkUser(user))
 		{
-			return ResponseEntity.ok(user);
+			return ResponseEntity.status(HttpStatus.OK).build();
 		}
-		return ResponseEntity.ok(user);
+		else
+		{
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+		}
         
 	}
 	

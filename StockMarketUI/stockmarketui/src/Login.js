@@ -82,14 +82,13 @@ export default class Login extends Component {
       };
       DataService.checkUser(data)
         .then((res) => {
+          console.log(res);
           if (res.status === 200) {
             AuthenticationService.registerSuccessfulLogin(this.state.username);
+            this.props.history.push("/AdminDashboard");
+
             this.setState({ errorMsgLogin: "" });
-            if (res.admin === true) {
-              this.props.history.push("/AdminDashboard");
-            } else {
-              this.props.history.push("/UserDashboard");
-            }
+            // console.log(res.admin);
           } else {
             this.resetForm();
             this.setState({ errorMsgLogin: "Invalid username or password" });
